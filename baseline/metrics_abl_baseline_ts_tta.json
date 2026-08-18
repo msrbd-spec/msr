@@ -1,0 +1,108 @@
+{
+  "accuracy": 0.916955017301038,
+  "macro_f1": 0.9093098995445327,
+  "macro_precision": 0.9051257253384913,
+  "macro_recall": 0.9150254856776596,
+  "weighted_f1": 0.9182735205755993,
+  "auroc_macro": 0.9898114884344003,
+  "auroc_micro": 0.9911399528262352,
+  "per_class_auroc": {
+    "Chickenpox": 0.9835164835164835,
+    "Healthy": 0.9981240344294857,
+    "Measles": 0.9947124304267162,
+    "Monkeypox": 0.9828930053649155
+  },
+  "per_class": {
+    "Chickenpox": {
+      "precision": 0.7659574468085106,
+      "recall": 0.8571428571428571,
+      "f1": 0.8089887640449438,
+      "support": 42
+    },
+    "Healthy": {
+      "precision": 1.0,
+      "recall": 0.9565217391304348,
+      "f1": 0.9777777777777777,
+      "support": 92
+    },
+    "Measles": {
+      "precision": 0.9545454545454546,
+      "recall": 0.9545454545454546,
+      "f1": 0.9545454545454546,
+      "support": 44
+    },
+    "Monkeypox": {
+      "precision": 0.9,
+      "recall": 0.8918918918918919,
+      "f1": 0.8959276018099548,
+      "support": 111
+    }
+  },
+  "classification_report": {
+    "Chickenpox": {
+      "precision": 0.7659574468085106,
+      "recall": 0.8571428571428571,
+      "f1-score": 0.8089887640449438,
+      "support": 42.0
+    },
+    "Healthy": {
+      "precision": 1.0,
+      "recall": 0.9565217391304348,
+      "f1-score": 0.9777777777777777,
+      "support": 92.0
+    },
+    "Measles": {
+      "precision": 0.9545454545454546,
+      "recall": 0.9545454545454546,
+      "f1-score": 0.9545454545454546,
+      "support": 44.0
+    },
+    "Monkeypox": {
+      "precision": 0.9,
+      "recall": 0.8918918918918919,
+      "f1-score": 0.8959276018099548,
+      "support": 111.0
+    },
+    "accuracy": 0.916955017301038,
+    "macro avg": {
+      "precision": 0.9051257253384913,
+      "recall": 0.9150254856776596,
+      "f1-score": 0.9093098995445327,
+      "support": 289.0
+    },
+    "weighted avg": {
+      "precision": 0.9206581756607524,
+      "recall": 0.916955017301038,
+      "f1-score": 0.9182735205755993,
+      "support": 289.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      36,
+      0,
+      0,
+      6
+    ],
+    [
+      0,
+      88,
+      0,
+      4
+    ],
+    [
+      1,
+      0,
+      42,
+      1
+    ],
+    [
+      10,
+      0,
+      2,
+      99
+    ]
+  ],
+  "n_samples": 289,
+  "tta": true
+}
