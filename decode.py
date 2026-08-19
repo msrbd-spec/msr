@@ -50,8 +50,8 @@ def main():
     )
     parser.add_argument(
         "--input", "-i",
-        default="png_archive.json",
-        help="Input JSON archive file (default: png_archive.json).",
+        default="archive.json",
+        help="Input JSON archive file (default: archive.json).",
     )
     parser.add_argument(
         "--output", "-o",
