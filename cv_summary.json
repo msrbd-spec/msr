@@ -1,0 +1,3260 @@
+{
+  "fold_results": {
+    "Fold_1": {
+      "FL_Run1_Uniform": {
+        "centralized": {
+          "standard": {
+            "accuracy": 0.9273356401384083,
+            "macro_f1": 0.9225920721983774,
+            "macro_precision": 0.9165481577246284,
+            "macro_recall": 0.933423754075928,
+            "weighted_f1": 0.9280047229743791,
+            "auroc_macro": 0.988960732665669,
+            "auroc_micro": 0.9858797986933425,
+            "per_class_auroc": {
+              "Chickenpox": 0.9926739926739927,
+              "Healthy": 0.997792981681748,
+              "Measles": 0.9878478664192949,
+              "Monkeypox": 0.9775280898876405
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.803921568627451,
+                "recall": 0.9761904761904762,
+                "f1": 0.8817204301075269,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.967032967032967,
+                "recall": 0.9565217391304348,
+                "f1": 0.9617486338797814,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9523809523809523,
+                "recall": 0.9090909090909091,
+                "f1": 0.9302325581395349,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9428571428571428,
+                "recall": 0.8918918918918919,
+                "f1": 0.9166666666666666,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.803921568627451,
+                "recall": 0.9761904761904762,
+                "f1-score": 0.8817204301075269,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.967032967032967,
+                "recall": 0.9565217391304348,
+                "f1-score": 0.9617486338797814,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9523809523809523,
+                "recall": 0.9090909090909091,
+                "f1-score": 0.9302325581395349,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9428571428571428,
+                "recall": 0.8918918918918919,
+                "f1-score": 0.9166666666666666,
+                "support": 111.0
+              },
+              "accuracy": 0.9273356401384083,
+              "macro avg": {
+                "precision": 0.9165481577246284,
+                "recall": 0.933423754075928,
+                "f1-score": 0.9225920721983774,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9318119156100024,
+                "recall": 0.9273356401384083,
+                "f1-score": 0.9280047229743791,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                41,
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                88,
+                0,
+                3
+              ],
+              [
+                2,
+                0,
+                40,
+                2
+              ],
+              [
+                7,
+                3,
+                2,
+                99
+              ]
+            ],
+            "n_samples": 289,
+            "tta": false
+          },
+          "tta": {
+            "accuracy": 0.9480968858131488,
+            "macro_f1": 0.9460050567809188,
+            "macro_precision": 0.939533767370414,
+            "macro_recall": 0.9549972403233272,
+            "weighted_f1": 0.9480634374978726,
+            "auroc_macro": 0.9891731998479432,
+            "auroc_micro": 0.9870651293287517,
+            "per_class_auroc": {
+              "Chickenpox": 0.9934451513398882,
+              "Healthy": 0.9975171043919664,
+              "Measles": 0.9867346938775511,
+              "Monkeypox": 0.9789958497823668
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.875,
+                "recall": 1.0,
+                "f1": 0.9333333333333333,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.967741935483871,
+                "recall": 0.9782608695652174,
+                "f1": 0.972972972972973,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1": 0.9425287356321839,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9619047619047619,
+                "recall": 0.9099099099099099,
+                "f1": 0.9351851851851852,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.875,
+                "recall": 1.0,
+                "f1-score": 0.9333333333333333,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.967741935483871,
+                "recall": 0.9782608695652174,
+                "f1-score": 0.972972972972973,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9425287356321839,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9619047619047619,
+                "recall": 0.9099099099099099,
+                "f1-score": 0.9351851851851852,
+                "support": 111.0
+              },
+              "accuracy": 0.9480968858131488,
+              "macro avg": {
+                "precision": 0.939533767370414,
+                "recall": 0.9549972403233272,
+                "f1-score": 0.9460050567809188,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9498518166368087,
+                "recall": 0.9480968858131488,
+                "f1-score": 0.9480634374978726,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                42,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                90,
+                0,
+                2
+              ],
+              [
+                1,
+                0,
+                41,
+                2
+              ],
+              [
+                5,
+                3,
+                2,
+                101
+              ]
+            ],
+            "n_samples": 289,
+            "tta": true
+          },
+          "ensemble": {
+            "accuracy": 0.9480968858131488,
+            "macro_f1": 0.9461371414227835,
+            "macro_precision": 0.937558365547496,
+            "macro_recall": 0.9579616672007977,
+            "auroc_macro": 0.9901885032882258,
+            "auroc_micro": 0.9895515299545423,
+            "per_class_auroc": {
+              "Chickenpox": 0.9929631771737035,
+              "Healthy": 0.998896490840874,
+              "Measles": 0.984786641929499,
+              "Monkeypox": 0.9841077032088268
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8571428571428571,
+                "recall": 1.0,
+                "f1": 0.9230769230769231,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.967391304347826,
+                "recall": 0.967391304347826,
+                "f1": 0.967391304347826,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9545454545454546,
+                "recall": 0.9545454545454546,
+                "f1": 0.9545454545454546,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9711538461538461,
+                "recall": 0.9099099099099099,
+                "f1": 0.9395348837209302,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8571428571428571,
+                "recall": 1.0,
+                "f1-score": 0.9230769230769231,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.967391304347826,
+                "recall": 0.967391304347826,
+                "f1-score": 0.967391304347826,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9545454545454546,
+                "recall": 0.9545454545454546,
+                "f1-score": 0.9545454545454546,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9711538461538461,
+                "recall": 0.9099099099099099,
+                "f1-score": 0.9395348837209302,
+                "support": 111.0
+              },
+              "accuracy": 0.9480968858131488,
+              "macro avg": {
+                "precision": 0.937558365547496,
+                "recall": 0.9579616672007977,
+                "f1-score": 0.9461371414227835,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9508583976577055,
+                "recall": 0.9480968858131488,
+                "f1-score": 0.9482962036756195,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                42,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                89,
+                0,
+                2
+              ],
+              [
+                1,
+                0,
+                42,
+                1
+              ],
+              [
+                5,
+                3,
+                2,
+                101
+              ]
+            ],
+            "n_samples": 289
+          },
+          "ts": {
+            "accuracy": 0.9273356401384083,
+            "macro_f1": 0.9225920721983774,
+            "macro_precision": 0.9165481577246284,
+            "macro_recall": 0.933423754075928,
+            "weighted_f1": 0.9280047229743791,
+            "auroc_macro": 0.9888870955743212,
+            "auroc_micro": 0.9856602930201187,
+            "per_class_auroc": {
+              "Chickenpox": 0.9926739926739927,
+              "Healthy": 0.9979033325976605,
+              "Measles": 0.9878478664192949,
+              "Monkeypox": 0.9771231906063368
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.803921568627451,
+                "recall": 0.9761904761904762,
+                "f1": 0.8817204301075269,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.967032967032967,
+                "recall": 0.9565217391304348,
+                "f1": 0.9617486338797814,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9523809523809523,
+                "recall": 0.9090909090909091,
+                "f1": 0.9302325581395349,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9428571428571428,
+                "recall": 0.8918918918918919,
+                "f1": 0.9166666666666666,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.803921568627451,
+                "recall": 0.9761904761904762,
+                "f1-score": 0.8817204301075269,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.967032967032967,
+                "recall": 0.9565217391304348,
+                "f1-score": 0.9617486338797814,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9523809523809523,
+                "recall": 0.9090909090909091,
+                "f1-score": 0.9302325581395349,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9428571428571428,
+                "recall": 0.8918918918918919,
+                "f1-score": 0.9166666666666666,
+                "support": 111.0
+              },
+              "accuracy": 0.9273356401384083,
+              "macro avg": {
+                "precision": 0.9165481577246284,
+                "recall": 0.933423754075928,
+                "f1-score": 0.9225920721983774,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9318119156100024,
+                "recall": 0.9273356401384083,
+                "f1-score": 0.9280047229743791,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                41,
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                88,
+                0,
+                3
+              ],
+              [
+                2,
+                0,
+                40,
+                2
+              ],
+              [
+                7,
+                3,
+                2,
+                99
+              ]
+            ],
+            "n_samples": 289,
+            "tta": false
+          },
+          "ts_tta": {
+            "accuracy": 0.9480968858131488,
+            "macro_f1": 0.9460050567809188,
+            "macro_precision": 0.939533767370414,
+            "macro_recall": 0.9549972403233272,
+            "weighted_f1": 0.9480634374978726,
+            "auroc_macro": 0.9891026522155706,
+            "auroc_micro": 0.9869014978268937,
+            "per_class_auroc": {
+              "Chickenpox": 0.9934451513398882,
+              "Healthy": 0.9975722798499227,
+              "Measles": 0.9865491651205938,
+              "Monkeypox": 0.9788440125518777
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.875,
+                "recall": 1.0,
+                "f1": 0.9333333333333333,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.967741935483871,
+                "recall": 0.9782608695652174,
+                "f1": 0.972972972972973,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1": 0.9425287356321839,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9619047619047619,
+                "recall": 0.9099099099099099,
+                "f1": 0.9351851851851852,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.875,
+                "recall": 1.0,
+                "f1-score": 0.9333333333333333,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.967741935483871,
+                "recall": 0.9782608695652174,
+                "f1-score": 0.972972972972973,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9425287356321839,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9619047619047619,
+                "recall": 0.9099099099099099,
+                "f1-score": 0.9351851851851852,
+                "support": 111.0
+              },
+              "accuracy": 0.9480968858131488,
+              "macro avg": {
+                "precision": 0.939533767370414,
+                "recall": 0.9549972403233272,
+                "f1-score": 0.9460050567809188,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9498518166368087,
+                "recall": 0.9480968858131488,
+                "f1-score": 0.9480634374978726,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                42,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                90,
+                0,
+                2
+              ],
+              [
+                1,
+                0,
+                41,
+                2
+              ],
+              [
+                5,
+                3,
+                2,
+                101
+              ]
+            ],
+            "n_samples": 289,
+            "tta": true
+          }
+        },
+        "fl": {
+          "standard": {
+            "accuracy": 0.9653979238754326,
+            "macro_f1": 0.9595183380825443,
+            "macro_precision": 0.9572755807548388,
+            "macro_recall": 0.9630235119365553,
+            "weighted_f1": 0.9655830047477268,
+            "auroc_macro": 0.991909539251427,
+            "auroc_micro": 0.9910401775202243,
+            "per_class_auroc": {
+              "Chickenpox": 0.9955658376711009,
+              "Healthy": 0.9996689472522622,
+              "Measles": 0.9851576994434137,
+              "Monkeypox": 0.9872456726389311
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8913043478260869,
+                "recall": 0.9761904761904762,
+                "f1": 0.9318181818181818,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.9891304347826086,
+                "recall": 0.9891304347826086,
+                "f1": 0.9891304347826086,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1": 0.9534883720930233,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9724770642201835,
+                "recall": 0.954954954954955,
+                "f1": 0.9636363636363636,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8913043478260869,
+                "recall": 0.9761904761904762,
+                "f1-score": 0.9318181818181818,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.9891304347826086,
+                "recall": 0.9891304347826086,
+                "f1-score": 0.9891304347826086,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9534883720930233,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9724770642201835,
+                "recall": 0.954954954954955,
+                "f1-score": 0.9636363636363636,
+                "support": 111.0
+              },
+              "accuracy": 0.9653979238754326,
+              "macro avg": {
+                "precision": 0.9572755807548388,
+                "recall": 0.9630235119365553,
+                "f1-score": 0.9595183380825443,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9665471200329306,
+                "recall": 0.9653979238754326,
+                "f1-score": 0.9655830047477268,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                41,
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                91,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                41,
+                2
+              ],
+              [
+                3,
+                1,
+                1,
+                106
+              ]
+            ],
+            "n_samples": 289,
+            "tta": false
+          },
+          "tta": {
+            "accuracy": 0.9550173010380623,
+            "macro_f1": 0.9486187861016862,
+            "macro_precision": 0.9488985476888703,
+            "macro_recall": 0.9488664977795412,
+            "weighted_f1": 0.9551201829003012,
+            "auroc_macro": 0.9932047727396116,
+            "auroc_micro": 0.9912038090220822,
+            "per_class_auroc": {
+              "Chickenpox": 0.9948910738384422,
+              "Healthy": 0.9995034208783933,
+              "Measles": 0.9912801484230056,
+              "Monkeypox": 0.9871444478186051
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8863636363636364,
+                "recall": 0.9285714285714286,
+                "f1": 0.9069767441860465,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.978494623655914,
+                "recall": 0.9891304347826086,
+                "f1": 0.9837837837837838,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1": 0.9534883720930233,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9545454545454546,
+                "recall": 0.9459459459459459,
+                "f1": 0.9502262443438914,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8863636363636364,
+                "recall": 0.9285714285714286,
+                "f1-score": 0.9069767441860465,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.978494623655914,
+                "recall": 0.9891304347826086,
+                "f1-score": 0.9837837837837838,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9534883720930233,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9545454545454546,
+                "recall": 0.9459459459459459,
+                "f1-score": 0.9502262443438914,
+                "support": 111.0
+              },
+              "accuracy": 0.9550173010380623,
+              "macro avg": {
+                "precision": 0.9488985476888703,
+                "recall": 0.9488664977795412,
+                "f1-score": 0.9486187861016862,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9555560709707378,
+                "recall": 0.9550173010380623,
+                "f1-score": 0.9551201829003012,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                39,
+                0,
+                0,
+                3
+              ],
+              [
+                1,
+                91,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                41,
+                2
+              ],
+              [
+                3,
+                2,
+                1,
+                105
+              ]
+            ],
+            "n_samples": 289,
+            "tta": true
+          },
+          "ensemble": {
+            "accuracy": 0.9584775086505191,
+            "macro_f1": 0.9532471746555672,
+            "macro_precision": 0.9502111607567396,
+            "macro_recall": 0.9580538683799553,
+            "auroc_macro": 0.9907092811616005,
+            "auroc_micro": 0.9907408516021918,
+            "per_class_auroc": {
+              "Chickenpox": 0.9960478118372855,
+              "Healthy": 0.9997241227102185,
+              "Measles": 0.97987012987013,
+              "Monkeypox": 0.9871950602287681
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8723404255319149,
+                "recall": 0.9761904761904762,
+                "f1": 0.9213483146067416,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.989010989010989,
+                "recall": 0.9782608695652174,
+                "f1": 0.9836065573770492,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1": 0.9534883720930233,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.963302752293578,
+                "recall": 0.9459459459459459,
+                "f1": 0.9545454545454546,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8723404255319149,
+                "recall": 0.9761904761904762,
+                "f1-score": 0.9213483146067416,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.989010989010989,
+                "recall": 0.9782608695652174,
+                "f1-score": 0.9836065573770492,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9534883720930233,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.963302752293578,
+                "recall": 0.9459459459459459,
+                "f1-score": 0.9545454545454546,
+                "support": 111.0
+              },
+              "accuracy": 0.9584775086505191,
+              "macro avg": {
+                "precision": 0.9502111607567396,
+                "recall": 0.9580538683799553,
+                "f1-score": 0.9532471746555672,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9602293955651194,
+                "recall": 0.9584775086505191,
+                "f1-score": 0.9588113021412116,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                41,
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                90,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                41,
+                2
+              ],
+              [
+                4,
+                1,
+                1,
+                105
+              ]
+            ],
+            "n_samples": 289
+          },
+          "ts": {
+            "accuracy": 0.9653979238754326,
+            "macro_f1": 0.9595183380825443,
+            "macro_precision": 0.9572755807548388,
+            "macro_recall": 0.9630235119365553,
+            "weighted_f1": 0.9655830047477268,
+            "auroc_macro": 0.9919026317141062,
+            "auroc_micro": 0.9910002673978201,
+            "per_class_auroc": {
+              "Chickenpox": 0.9959514170040485,
+              "Healthy": 0.9996689472522622,
+              "Measles": 0.9846938775510204,
+              "Monkeypox": 0.9872962850490941
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8913043478260869,
+                "recall": 0.9761904761904762,
+                "f1": 0.9318181818181818,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.9891304347826086,
+                "recall": 0.9891304347826086,
+                "f1": 0.9891304347826086,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1": 0.9534883720930233,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9724770642201835,
+                "recall": 0.954954954954955,
+                "f1": 0.9636363636363636,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8913043478260869,
+                "recall": 0.9761904761904762,
+                "f1-score": 0.9318181818181818,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.9891304347826086,
+                "recall": 0.9891304347826086,
+                "f1-score": 0.9891304347826086,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9534883720930233,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9724770642201835,
+                "recall": 0.954954954954955,
+                "f1-score": 0.9636363636363636,
+                "support": 111.0
+              },
+              "accuracy": 0.9653979238754326,
+              "macro avg": {
+                "precision": 0.9572755807548388,
+                "recall": 0.9630235119365553,
+                "f1-score": 0.9595183380825443,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9665471200329306,
+                "recall": 0.9653979238754326,
+                "f1-score": 0.9655830047477268,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                41,
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                91,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                41,
+                2
+              ],
+              [
+                3,
+                1,
+                1,
+                106
+              ]
+            ],
+            "n_samples": 289,
+            "tta": false
+          },
+          "ts_tta": {
+            "accuracy": 0.9550173010380623,
+            "macro_f1": 0.9486187861016862,
+            "macro_precision": 0.9488985476888703,
+            "macro_recall": 0.9488664977795412,
+            "weighted_f1": 0.9551201829003012,
+            "auroc_macro": 0.9931135904402533,
+            "auroc_micro": 0.9911918359853611,
+            "per_class_auroc": {
+              "Chickenpox": 0.995180258338153,
+              "Healthy": 0.9994482454204371,
+              "Measles": 0.990630797773655,
+              "Monkeypox": 0.9871950602287681
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8863636363636364,
+                "recall": 0.9285714285714286,
+                "f1": 0.9069767441860465,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.978494623655914,
+                "recall": 0.9891304347826086,
+                "f1": 0.9837837837837838,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1": 0.9534883720930233,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9545454545454546,
+                "recall": 0.9459459459459459,
+                "f1": 0.9502262443438914,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8863636363636364,
+                "recall": 0.9285714285714286,
+                "f1-score": 0.9069767441860465,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.978494623655914,
+                "recall": 0.9891304347826086,
+                "f1-score": 0.9837837837837838,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9534883720930233,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9545454545454546,
+                "recall": 0.9459459459459459,
+                "f1-score": 0.9502262443438914,
+                "support": 111.0
+              },
+              "accuracy": 0.9550173010380623,
+              "macro avg": {
+                "precision": 0.9488985476888703,
+                "recall": 0.9488664977795412,
+                "f1-score": 0.9486187861016862,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9555560709707378,
+                "recall": 0.9550173010380623,
+                "f1-score": 0.9551201829003012,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                39,
+                0,
+                0,
+                3
+              ],
+              [
+                1,
+                91,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                41,
+                2
+              ],
+              [
+                3,
+                2,
+                1,
+                105
+              ]
+            ],
+            "n_samples": 289,
+            "tta": true
+          },
+          "best_ckpt": "pipeline_v2_single_gpu/Fold_1/FL_Run1_Uniform/fl/Fold_1_FL_Run1_Uniform_fl_best.pt",
+          "swa_ckpt": "pipeline_v2_single_gpu/Fold_1/FL_Run1_Uniform/fl/Fold_1_FL_Run1_Uniform_fl_swa.pt"
+        }
+      },
+      "FL_Run2_Heterogeneous": {
+        "centralized": {
+          "standard": {
+            "accuracy": 0.9273356401384083,
+            "macro_f1": 0.9204714100827991,
+            "macro_precision": 0.9220108695652174,
+            "macro_recall": 0.924433503237851,
+            "weighted_f1": 0.9285074627201156,
+            "auroc_macro": 0.9828775597165273,
+            "auroc_micro": 0.9827388720601206,
+            "per_class_auroc": {
+              "Chickenpox": 0.9894929631771737,
+              "Healthy": 0.9971860516442286,
+              "Measles": 0.9733766233766235,
+              "Monkeypox": 0.9714546006680839
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8,
+                "recall": 0.9523809523809523,
+                "f1": 0.8695652173913043,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.9130434782608695,
+                "f1": 0.9545454545454546,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.975,
+                "recall": 0.8863636363636364,
+                "f1": 0.9285714285714286,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9130434782608695,
+                "recall": 0.9459459459459459,
+                "f1": 0.9292035398230089,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8,
+                "recall": 0.9523809523809523,
+                "f1-score": 0.8695652173913043,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.9130434782608695,
+                "f1-score": 0.9545454545454546,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.975,
+                "recall": 0.8863636363636364,
+                "f1-score": 0.9285714285714286,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9130434782608695,
+                "recall": 0.9459459459459459,
+                "f1-score": 0.9292035398230089,
+                "support": 111.0
+              },
+              "accuracy": 0.9273356401384083,
+              "macro avg": {
+                "precision": 0.9220108695652174,
+                "recall": 0.924433503237851,
+                "f1-score": 0.9204714100827991,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9337295020309914,
+                "recall": 0.9273356401384083,
+                "f1-score": 0.9285074627201156,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                40,
+                0,
+                0,
+                2
+              ],
+              [
+                2,
+                84,
+                0,
+                6
+              ],
+              [
+                3,
+                0,
+                39,
+                2
+              ],
+              [
+                5,
+                0,
+                1,
+                105
+              ]
+            ],
+            "n_samples": 289,
+            "tta": false
+          },
+          "tta": {
+            "accuracy": 0.9273356401384083,
+            "macro_f1": 0.9226649383157519,
+            "macro_precision": 0.9211063192149961,
+            "macro_recall": 0.93109805881545,
+            "weighted_f1": 0.9286853376409093,
+            "auroc_macro": 0.9836627298874826,
+            "auroc_micro": 0.9835849666550928,
+            "per_class_auroc": {
+              "Chickenpox": 0.99055330634278,
+              "Healthy": 0.9973515780180976,
+              "Measles": 0.9734693877551021,
+              "Monkeypox": 0.9732766474339508
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.7884615384615384,
+                "recall": 0.9761904761904762,
+                "f1": 0.8723404255319149,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.9021739130434783,
+                "f1": 0.9485714285714286,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.975609756097561,
+                "recall": 0.9090909090909091,
+                "f1": 0.9411764705882353,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9203539823008849,
+                "recall": 0.9369369369369369,
+                "f1": 0.9285714285714286,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.7884615384615384,
+                "recall": 0.9761904761904762,
+                "f1-score": 0.8723404255319149,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.9021739130434783,
+                "f1-score": 0.9485714285714286,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.975609756097561,
+                "recall": 0.9090909090909091,
+                "f1-score": 0.9411764705882353,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9203539823008849,
+                "recall": 0.9369369369369369,
+                "f1-score": 0.9285714285714286,
+                "support": 111.0
+              },
+              "accuracy": 0.9273356401384083,
+              "macro avg": {
+                "precision": 0.9211063192149961,
+                "recall": 0.93109805881545,
+                "f1-score": 0.9226649383157519,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9349533076784619,
+                "recall": 0.9273356401384083,
+                "f1-score": 0.9286853376409093,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                41,
+                0,
+                0,
+                1
+              ],
+              [
+                3,
+                83,
+                0,
+                6
+              ],
+              [
+                2,
+                0,
+                40,
+                2
+              ],
+              [
+                6,
+                0,
+                1,
+                104
+              ]
+            ],
+            "n_samples": 289,
+            "tta": true
+          },
+          "ensemble": {
+            "accuracy": 0.9480968858131488,
+            "macro_f1": 0.9414437542091342,
+            "macro_precision": 0.9354875184693393,
+            "macro_recall": 0.9503668335190074,
+            "auroc_macro": 0.9903430308420514,
+            "auroc_micro": 0.9905133639044871,
+            "per_class_auroc": {
+              "Chickenpox": 0.9931559668401774,
+              "Healthy": 0.9981240344294857,
+              "Measles": 0.9849721706864564,
+              "Monkeypox": 0.9851199514120862
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8367346938775511,
+                "recall": 0.9761904761904762,
+                "f1": 0.9010989010989011,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.9887640449438202,
+                "recall": 0.9565217391304348,
+                "f1": 0.9723756906077348,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1": 0.9425287356321839,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9629629629629629,
+                "recall": 0.9369369369369369,
+                "f1": 0.9497716894977168,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8367346938775511,
+                "recall": 0.9761904761904762,
+                "f1-score": 0.9010989010989011,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.9887640449438202,
+                "recall": 0.9565217391304348,
+                "f1-score": 0.9723756906077348,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9425287356321839,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9629629629629629,
+                "recall": 0.9369369369369369,
+                "f1-score": 0.9497716894977168,
+                "support": 111.0
+              },
+              "accuracy": 0.9480968858131488,
+              "macro avg": {
+                "precision": 0.9354875184693393,
+                "recall": 0.9503668335190074,
+                "f1-score": 0.9414437542091342,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9513893651857112,
+                "recall": 0.9480968858131488,
+                "f1-score": 0.9487911393914468,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                41,
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                88,
+                1,
+                2
+              ],
+              [
+                2,
+                0,
+                41,
+                1
+              ],
+              [
+                5,
+                1,
+                1,
+                104
+              ]
+            ],
+            "n_samples": 289
+          },
+          "ts": {
+            "accuracy": 0.9273356401384083,
+            "macro_f1": 0.9204714100827991,
+            "macro_precision": 0.9220108695652174,
+            "macro_recall": 0.924433503237851,
+            "weighted_f1": 0.9285074627201156,
+            "auroc_macro": 0.982980558008754,
+            "auroc_micro": 0.9828107102804484,
+            "per_class_auroc": {
+              "Chickenpox": 0.9893001735106999,
+              "Healthy": 0.9974619289340101,
+              "Measles": 0.9736549165120594,
+              "Monkeypox": 0.9715052130782468
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8,
+                "recall": 0.9523809523809523,
+                "f1": 0.8695652173913043,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.9130434782608695,
+                "f1": 0.9545454545454546,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.975,
+                "recall": 0.8863636363636364,
+                "f1": 0.9285714285714286,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9130434782608695,
+                "recall": 0.9459459459459459,
+                "f1": 0.9292035398230089,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8,
+                "recall": 0.9523809523809523,
+                "f1-score": 0.8695652173913043,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.9130434782608695,
+                "f1-score": 0.9545454545454546,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.975,
+                "recall": 0.8863636363636364,
+                "f1-score": 0.9285714285714286,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9130434782608695,
+                "recall": 0.9459459459459459,
+                "f1-score": 0.9292035398230089,
+                "support": 111.0
+              },
+              "accuracy": 0.9273356401384083,
+              "macro avg": {
+                "precision": 0.9220108695652174,
+                "recall": 0.924433503237851,
+                "f1-score": 0.9204714100827991,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9337295020309914,
+                "recall": 0.9273356401384083,
+                "f1-score": 0.9285074627201156,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                40,
+                0,
+                0,
+                2
+              ],
+              [
+                2,
+                84,
+                0,
+                6
+              ],
+              [
+                3,
+                0,
+                39,
+                2
+              ],
+              [
+                5,
+                0,
+                1,
+                105
+              ]
+            ],
+            "n_samples": 289,
+            "tta": false
+          },
+          "ts_tta": {
+            "accuracy": 0.9273356401384083,
+            "macro_f1": 0.9226649383157519,
+            "macro_precision": 0.9211063192149961,
+            "macro_recall": 0.93109805881545,
+            "weighted_f1": 0.9286853376409093,
+            "auroc_macro": 0.9838209745677378,
+            "auroc_micro": 0.9836647868999013,
+            "per_class_auroc": {
+              "Chickenpox": 0.990649701176017,
+              "Healthy": 0.9975171043919664,
+              "Measles": 0.9738404452690167,
+              "Monkeypox": 0.9732766474339508
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.7884615384615384,
+                "recall": 0.9761904761904762,
+                "f1": 0.8723404255319149,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.9021739130434783,
+                "f1": 0.9485714285714286,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.975609756097561,
+                "recall": 0.9090909090909091,
+                "f1": 0.9411764705882353,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9203539823008849,
+                "recall": 0.9369369369369369,
+                "f1": 0.9285714285714286,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.7884615384615384,
+                "recall": 0.9761904761904762,
+                "f1-score": 0.8723404255319149,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.9021739130434783,
+                "f1-score": 0.9485714285714286,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.975609756097561,
+                "recall": 0.9090909090909091,
+                "f1-score": 0.9411764705882353,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9203539823008849,
+                "recall": 0.9369369369369369,
+                "f1-score": 0.9285714285714286,
+                "support": 111.0
+              },
+              "accuracy": 0.9273356401384083,
+              "macro avg": {
+                "precision": 0.9211063192149961,
+                "recall": 0.93109805881545,
+                "f1-score": 0.9226649383157519,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9349533076784619,
+                "recall": 0.9273356401384083,
+                "f1-score": 0.9286853376409093,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                41,
+                0,
+                0,
+                1
+              ],
+              [
+                3,
+                83,
+                0,
+                6
+              ],
+              [
+                2,
+                0,
+                40,
+                2
+              ],
+              [
+                6,
+                0,
+                1,
+                104
+              ]
+            ],
+            "n_samples": 289,
+            "tta": true
+          }
+        },
+        "fl": {
+          "standard": {
+            "accuracy": 0.9446366782006921,
+            "macro_f1": 0.938500136190696,
+            "macro_precision": 0.9327569489334195,
+            "macro_recall": 0.9490448593709463,
+            "weighted_f1": 0.9456162812140251,
+            "auroc_macro": 0.9912695109553776,
+            "auroc_micro": 0.9900783435702797,
+            "per_class_auroc": {
+              "Chickenpox": 0.9942163100057837,
+              "Healthy": 0.9997241227102185,
+              "Measles": 0.9868274582560297,
+              "Monkeypox": 0.9843101528494786
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.803921568627451,
+                "recall": 0.9761904761904762,
+                "f1": 0.8817204301075269,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.989010989010989,
+                "recall": 0.9782608695652174,
+                "f1": 0.9836065573770492,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1": 0.9534883720930233,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9619047619047619,
+                "recall": 0.9099099099099099,
+                "f1": 0.9351851851851852,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.803921568627451,
+                "recall": 0.9761904761904762,
+                "f1-score": 0.8817204301075269,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.989010989010989,
+                "recall": 0.9782608695652174,
+                "f1-score": 0.9836065573770492,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9534883720930233,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9619047619047619,
+                "recall": 0.9099099099099099,
+                "f1-score": 0.9351851851851852,
+                "support": 111.0
+              },
+              "accuracy": 0.9446366782006921,
+              "macro avg": {
+                "precision": 0.9327569489334195,
+                "recall": 0.9490448593709463,
+                "f1-score": 0.938500136190696,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9497492262808769,
+                "recall": 0.9446366782006921,
+                "f1-score": 0.9456162812140251,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                41,
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                90,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                41,
+                2
+              ],
+              [
+                8,
+                1,
+                1,
+                101
+              ]
+            ],
+            "n_samples": 289,
+            "tta": false
+          },
+          "tta": {
+            "accuracy": 0.9411764705882353,
+            "macro_f1": 0.9370864728960979,
+            "macro_precision": 0.9317606607229248,
+            "macro_recall": 0.9463274680665985,
+            "weighted_f1": 0.9418747360508479,
+            "auroc_macro": 0.9920015584828938,
+            "auroc_micro": 0.9904814358065637,
+            "per_class_auroc": {
+              "Chickenpox": 0.9944090996722575,
+              "Healthy": 0.9995585963363496,
+              "Measles": 0.9899814471243042,
+              "Monkeypox": 0.9840570907986638
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.82,
+                "recall": 0.9761904761904762,
+                "f1": 0.8913043478260869,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.978021978021978,
+                "recall": 0.967391304347826,
+                "f1": 0.9726775956284153,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1": 0.9534883720930233,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9528301886792453,
+                "recall": 0.9099099099099099,
+                "f1": 0.9308755760368663,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.82,
+                "recall": 0.9761904761904762,
+                "f1-score": 0.8913043478260869,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.978021978021978,
+                "recall": 0.967391304347826,
+                "f1-score": 0.9726775956284153,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9534883720930233,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9528301886792453,
+                "recall": 0.9099099099099099,
+                "f1-score": 0.9308755760368663,
+                "support": 111.0
+              },
+              "accuracy": 0.9411764705882353,
+              "macro avg": {
+                "precision": 0.9317606607229248,
+                "recall": 0.9463274680665985,
+                "f1-score": 0.9370864728960979,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9451022625390975,
+                "recall": 0.9411764705882353,
+                "f1-score": 0.9418747360508479,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                41,
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                89,
+                0,
+                2
+              ],
+              [
+                1,
+                0,
+                41,
+                2
+              ],
+              [
+                7,
+                2,
+                1,
+                101
+              ]
+            ],
+            "n_samples": 289,
+            "tta": true
+          },
+          "ensemble": {
+            "accuracy": 0.9550173010380623,
+            "macro_f1": 0.9498617908728276,
+            "macro_precision": 0.9442248946022531,
+            "macro_recall": 0.9595017448278317,
+            "auroc_macro": 0.9920449130879074,
+            "auroc_micro": 0.9904295526474379,
+            "per_class_auroc": {
+              "Chickenpox": 0.9958550221708117,
+              "Healthy": 0.9996689472522622,
+              "Measles": 0.9879406307977737,
+              "Monkeypox": 0.9847150521307824
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.84,
+                "recall": 1.0,
+                "f1": 0.9130434782608695,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.989010989010989,
+                "recall": 0.9782608695652174,
+                "f1": 0.9836065573770492,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1": 0.9534883720930233,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9716981132075472,
+                "recall": 0.9279279279279279,
+                "f1": 0.9493087557603687,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.84,
+                "recall": 1.0,
+                "f1-score": 0.9130434782608695,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.989010989010989,
+                "recall": 0.9782608695652174,
+                "f1-score": 0.9836065573770492,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9534883720930233,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9716981132075472,
+                "recall": 0.9279279279279279,
+                "f1-score": 0.9493087557603687,
+                "support": 111.0
+              },
+              "accuracy": 0.9550173010380623,
+              "macro avg": {
+                "precision": 0.9442248946022531,
+                "recall": 0.9595017448278317,
+                "f1-score": 0.9498617908728276,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9587539187108293,
+                "recall": 0.9550173010380623,
+                "f1-score": 0.9555930436925224,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                42,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                90,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                41,
+                2
+              ],
+              [
+                6,
+                1,
+                1,
+                103
+              ]
+            ],
+            "n_samples": 289
+          },
+          "ts": {
+            "accuracy": 0.9446366782006921,
+            "macro_f1": 0.938500136190696,
+            "macro_precision": 0.9327569489334195,
+            "macro_recall": 0.9490448593709463,
+            "weighted_f1": 0.9456162812140251,
+            "auroc_macro": 0.9915174511004624,
+            "auroc_micro": 0.9900543974968371,
+            "per_class_auroc": {
+              "Chickenpox": 0.9954694428378639,
+              "Healthy": 0.9997241227102185,
+              "Measles": 0.9863636363636364,
+              "Monkeypox": 0.9845126024901306
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.803921568627451,
+                "recall": 0.9761904761904762,
+                "f1": 0.8817204301075269,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.989010989010989,
+                "recall": 0.9782608695652174,
+                "f1": 0.9836065573770492,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1": 0.9534883720930233,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9619047619047619,
+                "recall": 0.9099099099099099,
+                "f1": 0.9351851851851852,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.803921568627451,
+                "recall": 0.9761904761904762,
+                "f1-score": 0.8817204301075269,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.989010989010989,
+                "recall": 0.9782608695652174,
+                "f1-score": 0.9836065573770492,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9534883720930233,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9619047619047619,
+                "recall": 0.9099099099099099,
+                "f1-score": 0.9351851851851852,
+                "support": 111.0
+              },
+              "accuracy": 0.9446366782006921,
+              "macro avg": {
+                "precision": 0.9327569489334195,
+                "recall": 0.9490448593709463,
+                "f1-score": 0.938500136190696,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9497492262808769,
+                "recall": 0.9446366782006921,
+                "f1-score": 0.9456162812140251,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                41,
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                90,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                41,
+                2
+              ],
+              [
+                8,
+                1,
+                1,
+                101
+              ]
+            ],
+            "n_samples": 289,
+            "tta": false
+          },
+          "ts_tta": {
+            "accuracy": 0.9411764705882353,
+            "macro_f1": 0.9370864728960979,
+            "macro_precision": 0.9317606607229248,
+            "macro_recall": 0.9463274680665985,
+            "weighted_f1": 0.9418747360508479,
+            "auroc_macro": 0.9922850429420562,
+            "auroc_micro": 0.990457489733121,
+            "per_class_auroc": {
+              "Chickenpox": 0.9958550221708116,
+              "Healthy": 0.9995585963363496,
+              "Measles": 0.9895176252319109,
+              "Monkeypox": 0.9842089280291527
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.82,
+                "recall": 0.9761904761904762,
+                "f1": 0.8913043478260869,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.978021978021978,
+                "recall": 0.967391304347826,
+                "f1": 0.9726775956284153,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1": 0.9534883720930233,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9528301886792453,
+                "recall": 0.9099099099099099,
+                "f1": 0.9308755760368663,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.82,
+                "recall": 0.9761904761904762,
+                "f1-score": 0.8913043478260869,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.978021978021978,
+                "recall": 0.967391304347826,
+                "f1-score": 0.9726775956284153,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9761904761904762,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9534883720930233,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9528301886792453,
+                "recall": 0.9099099099099099,
+                "f1-score": 0.9308755760368663,
+                "support": 111.0
+              },
+              "accuracy": 0.9411764705882353,
+              "macro avg": {
+                "precision": 0.9317606607229248,
+                "recall": 0.9463274680665985,
+                "f1-score": 0.9370864728960979,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9451022625390975,
+                "recall": 0.9411764705882353,
+                "f1-score": 0.9418747360508479,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                41,
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                89,
+                0,
+                2
+              ],
+              [
+                1,
+                0,
+                41,
+                2
+              ],
+              [
+                7,
+                2,
+                1,
+                101
+              ]
+            ],
+            "n_samples": 289,
+            "tta": true
+          },
+          "best_ckpt": "pipeline_v2_single_gpu/Fold_1/FL_Run2_Heterogeneous/fl/Fold_1_FL_Run2_Heterogeneous_fl_best.pt",
+          "swa_ckpt": "pipeline_v2_single_gpu/Fold_1/FL_Run2_Heterogeneous/fl/Fold_1_FL_Run2_Heterogeneous_fl_swa.pt"
+        }
+      }
+    },
+    "Fold_2": {
+      "FL_Run1_Uniform": {
+        "centralized": {
+          "standard": {
+            "accuracy": 0.9273356401384083,
+            "macro_f1": 0.9136297419056039,
+            "macro_precision": 0.9160454430650269,
+            "macro_recall": 0.9114175581566886,
+            "weighted_f1": 0.9275523172289668,
+            "auroc_macro": 0.989183618181255,
+            "auroc_micro": 0.9924130857309339,
+            "per_class_auroc": {
+              "Chickenpox": 0.9805282436861384,
+              "Healthy": 0.9993930699624807,
+              "Measles": 0.9923005565862708,
+              "Monkeypox": 0.9845126024901305
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8095238095238095,
+                "recall": 0.8095238095238095,
+                "f1": 0.8095238095238095,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.9888888888888889,
+                "recall": 0.967391304347826,
+                "f1": 0.978021978021978,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1": 0.9425287356321839,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9122807017543859,
+                "recall": 0.9369369369369369,
+                "f1": 0.9244444444444444,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8095238095238095,
+                "recall": 0.8095238095238095,
+                "f1-score": 0.8095238095238095,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.9888888888888889,
+                "recall": 0.967391304347826,
+                "f1-score": 0.978021978021978,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9425287356321839,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9122807017543859,
+                "recall": 0.9369369369369369,
+                "f1-score": 0.9244444444444444,
+                "support": 111.0
+              },
+              "accuracy": 0.9273356401384083,
+              "macro avg": {
+                "precision": 0.9160454430650269,
+                "recall": 0.9114175581566886,
+                "f1-score": 0.9136297419056039,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9280083876976044,
+                "recall": 0.9273356401384083,
+                "f1-score": 0.9275523172289668,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                34,
+                0,
+                0,
+                8
+              ],
+              [
+                1,
+                89,
+                1,
+                1
+              ],
+              [
+                2,
+                0,
+                41,
+                1
+              ],
+              [
+                5,
+                1,
+                1,
+                104
+              ]
+            ],
+            "n_samples": 289,
+            "tta": false
+          },
+          "tta": {
+            "accuracy": 0.9307958477508651,
+            "macro_f1": 0.9171197667350866,
+            "macro_precision": 0.9173242249621134,
+            "macro_recall": 0.9173699391090695,
+            "weighted_f1": 0.9315013064789602,
+            "auroc_macro": 0.9889136314726923,
+            "auroc_micro": 0.9919102181886392,
+            "per_class_auroc": {
+              "Chickenpox": 0.979564295353769,
+              "Healthy": 0.9997241227102185,
+              "Measles": 0.9922077922077922,
+              "Monkeypox": 0.9841583156189897
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.7954545454545454,
+                "recall": 0.8333333333333334,
+                "f1": 0.813953488372093,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.967391304347826,
+                "f1": 0.9834254143646409,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1": 0.9425287356321839,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9203539823008849,
+                "recall": 0.9369369369369369,
+                "f1": 0.9285714285714286,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.7954545454545454,
+                "recall": 0.8333333333333334,
+                "f1-score": 0.813953488372093,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.967391304347826,
+                "f1-score": 0.9834254143646409,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9425287356321839,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9203539823008849,
+                "recall": 0.9369369369369369,
+                "f1-score": 0.9285714285714286,
+                "support": 111.0
+              },
+              "accuracy": 0.9307958477508651,
+              "macro avg": {
+                "precision": 0.9173242249621134,
+                "recall": 0.9173699391090695,
+                "f1-score": 0.9171197667350866,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9326016308532256,
+                "recall": 0.9307958477508651,
+                "f1-score": 0.9315013064789602,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                35,
+                0,
+                0,
+                7
+              ],
+              [
+                1,
+                89,
+                1,
+                1
+              ],
+              [
+                2,
+                0,
+                41,
+                1
+              ],
+              [
+                6,
+                0,
+                1,
+                104
+              ]
+            ],
+            "n_samples": 289,
+            "tta": true
+          },
+          "ensemble": {
+            "accuracy": 0.9342560553633218,
+            "macro_f1": 0.9227987224855838,
+            "macro_precision": 0.9169823232323231,
+            "macro_recall": 0.9307225774617078,
+            "auroc_macro": 0.9909386501753107,
+            "auroc_micro": 0.9930197195914799,
+            "per_class_auroc": {
+              "Chickenpox": 0.9834200886832466,
+              "Healthy": 0.9993378945045244,
+              "Measles": 0.9941558441558442,
+              "Monkeypox": 0.9868407733576272
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.7916666666666666,
+                "recall": 0.9047619047619048,
+                "f1": 0.8444444444444444,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.967391304347826,
+                "f1": 0.9834254143646409,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9318181818181818,
+                "recall": 0.9318181818181818,
+                "f1": 0.9318181818181818,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9444444444444444,
+                "recall": 0.918918918918919,
+                "f1": 0.9315068493150684,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.7916666666666666,
+                "recall": 0.9047619047619048,
+                "f1-score": 0.8444444444444444,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.967391304347826,
+                "f1-score": 0.9834254143646409,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9318181818181818,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9318181818181818,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9444444444444444,
+                "recall": 0.918918918918919,
+                "f1-score": 0.9315068493150684,
+                "support": 111.0
+              },
+              "accuracy": 0.9342560553633218,
+              "macro avg": {
+                "precision": 0.9169823232323231,
+                "recall": 0.9307225774617078,
+                "f1-score": 0.9227987224855838,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9380046136101499,
+                "recall": 0.9342560553633218,
+                "f1-score": 0.9354292908726168,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                38,
+                0,
+                0,
+                4
+              ],
+              [
+                1,
+                89,
+                1,
+                1
+              ],
+              [
+                2,
+                0,
+                41,
+                1
+              ],
+              [
+                7,
+                0,
+                2,
+                102
+              ]
+            ],
+            "n_samples": 289
+          },
+          "ts": {
+            "accuracy": 0.9273356401384083,
+            "macro_f1": 0.9136297419056039,
+            "macro_precision": 0.9160454430650269,
+            "macro_recall": 0.9114175581566886,
+            "weighted_f1": 0.9275523172289668,
+            "auroc_macro": 0.9892351382051076,
+            "auroc_micro": 0.9924889149635023,
+            "per_class_auroc": {
+              "Chickenpox": 0.9806246385193753,
+              "Healthy": 0.9993930699624807,
+              "Measles": 0.9922077922077921,
+              "Monkeypox": 0.9847150521307825
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8095238095238095,
+                "recall": 0.8095238095238095,
+                "f1": 0.8095238095238095,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.9888888888888889,
+                "recall": 0.967391304347826,
+                "f1": 0.978021978021978,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1": 0.9425287356321839,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9122807017543859,
+                "recall": 0.9369369369369369,
+                "f1": 0.9244444444444444,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8095238095238095,
+                "recall": 0.8095238095238095,
+                "f1-score": 0.8095238095238095,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.9888888888888889,
+                "recall": 0.967391304347826,
+                "f1-score": 0.978021978021978,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9425287356321839,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9122807017543859,
+                "recall": 0.9369369369369369,
+                "f1-score": 0.9244444444444444,
+                "support": 111.0
+              },
+              "accuracy": 0.9273356401384083,
+              "macro avg": {
+                "precision": 0.9160454430650269,
+                "recall": 0.9114175581566886,
+                "f1-score": 0.9136297419056039,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9280083876976044,
+                "recall": 0.9273356401384083,
+                "f1-score": 0.9275523172289668,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                34,
+                0,
+                0,
+                8
+              ],
+              [
+                1,
+                89,
+                1,
+                1
+              ],
+              [
+                2,
+                0,
+                41,
+                1
+              ],
+              [
+                5,
+                1,
+                1,
+                104
+              ]
+            ],
+            "n_samples": 289,
+            "tta": false
+          },
+          "ts_tta": {
+            "accuracy": 0.9307958477508651,
+            "macro_f1": 0.9171197667350866,
+            "macro_precision": 0.9173242249621134,
+            "macro_recall": 0.9173699391090695,
+            "weighted_f1": 0.9315013064789602,
+            "auroc_macro": 0.9887283358639938,
+            "auroc_micro": 0.9918782900907157,
+            "per_class_auroc": {
+              "Chickenpox": 0.979467900520532,
+              "Healthy": 0.9997792981681748,
+              "Measles": 0.9915584415584415,
+              "Monkeypox": 0.9841077032088268
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.7954545454545454,
+                "recall": 0.8333333333333334,
+                "f1": 0.813953488372093,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.967391304347826,
+                "f1": 0.9834254143646409,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1": 0.9425287356321839,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9203539823008849,
+                "recall": 0.9369369369369369,
+                "f1": 0.9285714285714286,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.7954545454545454,
+                "recall": 0.8333333333333334,
+                "f1-score": 0.813953488372093,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 1.0,
+                "recall": 0.967391304347826,
+                "f1-score": 0.9834254143646409,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9425287356321839,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9203539823008849,
+                "recall": 0.9369369369369369,
+                "f1-score": 0.9285714285714286,
+                "support": 111.0
+              },
+              "accuracy": 0.9307958477508651,
+              "macro avg": {
+                "precision": 0.9173242249621134,
+                "recall": 0.9173699391090695,
+                "f1-score": 0.9171197667350866,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9326016308532256,
+                "recall": 0.9307958477508651,
+                "f1-score": 0.9315013064789602,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                35,
+                0,
+                0,
+                7
+              ],
+              [
+                1,
+                89,
+                1,
+                1
+              ],
+              [
+                2,
+                0,
+                41,
+                1
+              ],
+              [
+                6,
+                0,
+                1,
+                104
+              ]
+            ],
+            "n_samples": 289,
+            "tta": true
+          }
+        },
+        "fl": {
+          "standard": {
+            "accuracy": 0.9446366782006921,
+            "macro_f1": 0.9397800030958956,
+            "macro_precision": 0.9387027308538936,
+            "macro_recall": 0.9411794629185932,
+            "weighted_f1": 0.9448118561295649,
+            "auroc_macro": 0.9883405379917882,
+            "auroc_micro": 0.9910800876426287,
+            "per_class_auroc": {
+              "Chickenpox": 0.987372276845961,
+              "Healthy": 0.9993378945045245,
+              "Measles": 0.9794063079777366,
+              "Monkeypox": 0.987245672638931
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8863636363636364,
+                "recall": 0.9285714285714286,
+                "f1": 0.9069767441860465,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.978021978021978,
+                "recall": 0.967391304347826,
+                "f1": 0.9726775956284153,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1": 0.9425287356321839,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9369369369369369,
+                "recall": 0.9369369369369369,
+                "f1": 0.9369369369369369,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8863636363636364,
+                "recall": 0.9285714285714286,
+                "f1-score": 0.9069767441860465,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.978021978021978,
+                "recall": 0.967391304347826,
+                "f1-score": 0.9726775956284153,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9425287356321839,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9369369369369369,
+                "recall": 0.9369369369369369,
+                "f1-score": 0.9369369369369369,
+                "support": 111.0
+              },
+              "accuracy": 0.9446366782006921,
+              "macro avg": {
+                "precision": 0.9387027308538936,
+                "recall": 0.9411794629185932,
+                "f1-score": 0.9397800030958956,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9451861006137984,
+                "recall": 0.9446366782006921,
+                "f1-score": 0.9448118561295649,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                39,
+                0,
+                0,
+                3
+              ],
+              [
+                0,
+                89,
+                0,
+                3
+              ],
+              [
+                2,
+                0,
+                41,
+                1
+              ],
+              [
+                3,
+                2,
+                2,
+                104
+              ]
+            ],
+            "n_samples": 289,
+            "tta": false
+          },
+          "tta": {
+            "accuracy": 0.9411764705882353,
+            "macro_f1": 0.937629449596497,
+            "macro_precision": 0.9337223345691494,
+            "macro_recall": 0.9426273393664697,
+            "weighted_f1": 0.9413506672097125,
+            "auroc_macro": 0.9885990457247406,
+            "auroc_micro": 0.9913794135606614,
+            "per_class_auroc": {
+              "Chickenpox": 0.9879506458453827,
+              "Healthy": 0.9993378945045245,
+              "Measles": 0.9788497217068646,
+              "Monkeypox": 0.9882579208421906
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8695652173913043,
+                "recall": 0.9523809523809523,
+                "f1": 0.9090909090909091,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.967391304347826,
+                "recall": 0.967391304347826,
+                "f1": 0.967391304347826,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1": 0.9425287356321839,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9444444444444444,
+                "recall": 0.918918918918919,
+                "f1": 0.9315068493150684,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8695652173913043,
+                "recall": 0.9523809523809523,
+                "f1-score": 0.9090909090909091,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.967391304347826,
+                "recall": 0.967391304347826,
+                "f1-score": 0.967391304347826,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9425287356321839,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9444444444444444,
+                "recall": 0.918918918918919,
+                "f1-score": 0.9315068493150684,
+                "support": 111.0
+              },
+              "accuracy": 0.9411764705882353,
+              "macro avg": {
+                "precision": 0.9337223345691494,
+                "recall": 0.9426273393664697,
+                "f1-score": 0.937629449596497,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.942244155141388,
+                "recall": 0.9411764705882353,
+                "f1-score": 0.9413506672097125,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                40,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                89,
+                0,
+                3
+              ],
+              [
+                2,
+                0,
+                41,
+                1
+              ],
+              [
+                4,
+                3,
+                2,
+                102
+              ]
+            ],
+            "n_samples": 289,
+            "tta": true
+          },
+          "ensemble": {
+            "accuracy": 0.9411764705882353,
+            "macro_f1": 0.9366206161486437,
+            "macro_precision": 0.9292092537965179,
+            "macro_recall": 0.9463274680665985,
+            "auroc_macro": 0.9888649231011428,
+            "auroc_micro": 0.9908605819694049,
+            "per_class_auroc": {
+              "Chickenpox": 0.9882398303450934,
+              "Healthy": 0.9991171926726992,
+              "Measles": 0.9801484230055659,
+              "Monkeypox": 0.9879542463812128
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8541666666666666,
+                "recall": 0.9761904761904762,
+                "f1": 0.9111111111111111,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.978021978021978,
+                "recall": 0.967391304347826,
+                "f1": 0.9726775956284153,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9318181818181818,
+                "recall": 0.9318181818181818,
+                "f1": 0.9318181818181818,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9528301886792453,
+                "recall": 0.9099099099099099,
+                "f1": 0.9308755760368663,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8541666666666666,
+                "recall": 0.9761904761904762,
+                "f1-score": 0.9111111111111111,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.978021978021978,
+                "recall": 0.967391304347826,
+                "f1-score": 0.9726775956284153,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9318181818181818,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9318181818181818,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9528301886792453,
+                "recall": 0.9099099099099099,
+                "f1-score": 0.9308755760368663,
+                "support": 111.0
+              },
+              "accuracy": 0.9411764705882353,
+              "macro avg": {
+                "precision": 0.9292092537965179,
+                "recall": 0.9463274680665985,
+                "f1-score": 0.9366206161486437,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9433120170291286,
+                "recall": 0.9411764705882353,
+                "f1-score": 0.9414539598774153,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                41,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                89,
+                0,
+                3
+              ],
+              [
+                2,
+                0,
+                41,
+                1
+              ],
+              [
+                5,
+                2,
+                3,
+                101
+              ]
+            ],
+            "n_samples": 289
+          },
+          "ts": {
+            "accuracy": 0.9446366782006921,
+            "macro_f1": 0.9397800030958956,
+            "macro_precision": 0.9387027308538936,
+            "macro_recall": 0.9411794629185932,
+            "weighted_f1": 0.9448118561295649,
+            "auroc_macro": 0.9882964744654809,
+            "auroc_micro": 0.9910242134712627,
+            "per_class_auroc": {
+              "Chickenpox": 0.9879506458453826,
+              "Healthy": 0.9993930699624808,
+              "Measles": 0.9794063079777366,
+              "Monkeypox": 0.9864358740763235
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8863636363636364,
+                "recall": 0.9285714285714286,
+                "f1": 0.9069767441860465,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.978021978021978,
+                "recall": 0.967391304347826,
+                "f1": 0.9726775956284153,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1": 0.9425287356321839,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9369369369369369,
+                "recall": 0.9369369369369369,
+                "f1": 0.9369369369369369,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8863636363636364,
+                "recall": 0.9285714285714286,
+                "f1-score": 0.9069767441860465,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.978021978021978,
+                "recall": 0.967391304347826,
+                "f1-score": 0.9726775956284153,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9534883720930233,
+                "recall": 0.9318181818181818,
+                "f1-score": 0.9425287356321839,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9369369369369369,
+                "recall": 0.9369369369369369,
+                "f1-score": 0.9369369369369369,
+                "support": 111.0
+              },
+              "accuracy": 0.9446366782006921,
+              "macro avg": {
+                "precision": 0.9387027308538936,
+                "recall": 0.9411794629185932,
+                "f1-score": 0.9397800030958956,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9451861006137984,
+                "recall": 0.9446366782006921,
+                "f1-score": 0.9448118561295649,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                39,
+                0,
+                0,
+                3
+              ],
+              [
+                0,
+                89,
+                0,
+                3
+              ],
+              [
+                2,
+                0,
+                41,
+                1
+              ],
+              [
+                3,
+                2,
+                2,
+                104
+              ]
+            ],
+            "n_samples": 289,
+            "tta": false
+          },
+          "ts_tta": {
+            "accuracy": 0.9446366782006921,
+            "macro_f1": 0.9432459595233516,
+            "macro_precision": 0.9388175230566536,
+            "macro_recall": 0.9483091575482879,
+            "weighted_f1": 0.9446987886821626,
+            "auroc_macro": 0.9886083094852234,
+            "auroc_micro": 0.9914033596341039,
+            "per_class_auroc": {
+              "Chickenpox": 0.9881434355118566,
+              "Healthy": 0.9993930699624808,
+              "Measles": 0.9789424860853433,
+              "Monkeypox": 0.9879542463812128
+            },
+            "per_class": {
+              "Chickenpox": {
+                "precision": 0.8888888888888888,
+                "recall": 0.9523809523809523,
+                "f1": 0.9195402298850575,
+                "support": 42
+              },
+              "Healthy": {
+                "precision": 0.967391304347826,
+                "recall": 0.967391304347826,
+                "f1": 0.967391304347826,
+                "support": 92
+              },
+              "Measles": {
+                "precision": 0.9545454545454546,
+                "recall": 0.9545454545454546,
+                "f1": 0.9545454545454546,
+                "support": 44
+              },
+              "Monkeypox": {
+                "precision": 0.9444444444444444,
+                "recall": 0.918918918918919,
+                "f1": 0.9315068493150684,
+                "support": 111
+              }
+            },
+            "classification_report": {
+              "Chickenpox": {
+                "precision": 0.8888888888888888,
+                "recall": 0.9523809523809523,
+                "f1-score": 0.9195402298850575,
+                "support": 42.0
+              },
+              "Healthy": {
+                "precision": 0.967391304347826,
+                "recall": 0.967391304347826,
+                "f1-score": 0.967391304347826,
+                "support": 92.0
+              },
+              "Measles": {
+                "precision": 0.9545454545454546,
+                "recall": 0.9545454545454546,
+                "f1-score": 0.9545454545454546,
+                "support": 44.0
+              },
+              "Monkeypox": {
+                "precision": 0.9444444444444444,
+                "recall": 0.918918918918919,
+                "f1-score": 0.9315068493150684,
+                "support": 111.0
+              },
+              "accuracy": 0.9446366782006921,
+              "macro avg": {
+                "precision": 0.9388175230566536,
+                "recall": 0.9483091575482879,
+                "f1-score": 0.9432459595233516,
+                "support": 289.0
+              },
+              "weighted avg": {
+                "precision": 0.9452133794694347,
+                "recall": 0.9446366782006921,
+                "f1-score": 0.9446987886821626,
+                "support": 289.0
+              }
+            },
+            "confusion_matrix": [
+              [
+                40,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                89,
+                0,
+                3
+              ],
+              [
+                1,
+                0,
+                42,
+                1
+              ],
+              [
+                4,
+                3,
+                2,
+                102
+              ]
+            ],
+            "n_samples": 289,
+            "tta": true
+          },
+          "best_ckpt": "pipeline_v2_single_gpu/Fold_2/FL_Run1_Uniform/fl/Fold_2_FL_Run1_Uniform_fl_best.pt",
+          "swa_ckpt": "pipeline_v2_single_gpu/Fold_2/FL_Run1_Uniform/fl/Fold_2_FL_Run1_Uniform_fl_swa.pt"
+        }
+      }
+    }
+  }
+}
