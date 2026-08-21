@@ -1,6 +1,0 @@
-{
-  "winning_config": "msaf_primary",
-  "desc": "ECA+CBAM+CSAH [s1,s2,s3], no aux heads",
-  "use_aux_loss": false,
-  "f1_mean": 0.9231519569804719
-}
