@@ -1,0 +1,108 @@
+{
+  "accuracy": 0.9238754325259516,
+  "macro_f1": 0.9143279804354146,
+  "macro_precision": 0.9078703703703704,
+  "macro_recall": 0.92295955611173,
+  "weighted_f1": 0.9254057872035932,
+  "auroc_macro": 0.9765233295530782,
+  "auroc_micro": 0.983385416043071,
+  "per_class_auroc": {
+    "Chickenpox": 0.9477540003855793,
+    "Healthy": 0.9961928934010151,
+    "Measles": 0.9833024118738404,
+    "Monkeypox": 0.9788440125518778
+  },
+  "per_class": {
+    "Chickenpox": {
+      "precision": 0.75,
+      "recall": 0.8571428571428571,
+      "f1": 0.8,
+      "support": 42
+    },
+    "Healthy": {
+      "precision": 1.0,
+      "recall": 0.9565217391304348,
+      "f1": 0.9777777777777777,
+      "support": 92
+    },
+    "Measles": {
+      "precision": 0.9555555555555556,
+      "recall": 0.9772727272727273,
+      "f1": 0.9662921348314607,
+      "support": 44
+    },
+    "Monkeypox": {
+      "precision": 0.9259259259259259,
+      "recall": 0.9009009009009009,
+      "f1": 0.91324200913242,
+      "support": 111
+    }
+  },
+  "classification_report": {
+    "Chickenpox": {
+      "precision": 0.75,
+      "recall": 0.8571428571428571,
+      "f1-score": 0.8,
+      "support": 42.0
+    },
+    "Healthy": {
+      "precision": 1.0,
+      "recall": 0.9565217391304348,
+      "f1-score": 0.9777777777777777,
+      "support": 92.0
+    },
+    "Measles": {
+      "precision": 0.9555555555555556,
+      "recall": 0.9772727272727273,
+      "f1-score": 0.9662921348314607,
+      "support": 44.0
+    },
+    "Monkeypox": {
+      "precision": 0.9259259259259259,
+      "recall": 0.9009009009009009,
+      "f1-score": 0.91324200913242,
+      "support": 111.0
+    },
+    "accuracy": 0.9238754325259516,
+    "macro avg": {
+      "precision": 0.9078703703703704,
+      "recall": 0.92295955611173,
+      "f1-score": 0.9143279804354146,
+      "support": 289.0
+    },
+    "weighted avg": {
+      "precision": 0.9284505959246443,
+      "recall": 0.9238754325259516,
+      "f1-score": 0.9254057872035932,
+      "support": 289.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      36,
+      0,
+      1,
+      5
+    ],
+    [
+      1,
+      88,
+      0,
+      3
+    ],
+    [
+      1,
+      0,
+      43,
+      0
+    ],
+    [
+      10,
+      0,
+      1,
+      100
+    ]
+  ],
+  "n_samples": 289,
+  "tta": true
+}
