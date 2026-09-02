@@ -1,0 +1,1780 @@
+Device : cuda
+GPU    : NVIDIA A100-SXM4-40GB
+VRAM   : 42.3 GB
+Focal alpha (test-dist): ['0.332', '0.148', '0.399', '0.120']
+Configuration ready.
+  LR  backbone=3e-05 | attn=0.0001 | head=0.0002
+  Centralized phases: 10+15+40 epochs
+  FL: 50 rounds x 3 local epochs  patience=18
+  Ablation folds: ['Fold_1', 'Fold_2', 'Fold_3', 'Fold_4', 'Fold_5']
+Section 0 complete.
+Dimension smoke test...
+  baseline              eval=torch.Size([2, 4])  train=[torch.Size([2, 4])]  params=27.82M
+  none_gap              eval=torch.Size([2, 4])  train=[torch.Size([2, 4])]  params=28.02M
+  eca_only_gap          eval=torch.Size([2, 4])  train=[torch.Size([2, 4])]  params=28.02M
+  cbam_eca_gap          eval=torch.Size([2, 4])  train=[torch.Size([2, 4])]  params=28.06M
+  msaf_gem_only         eval=torch.Size([2, 4])  train=[torch.Size([2, 4])]  params=28.06M
+  no_stoch_depth        eval=torch.Size([2, 4])  train=[torch.Size([2, 4])]  params=28.43M
+  no_gem_pool           eval=torch.Size([2, 4])  train=[torch.Size([2, 4])]  params=28.43M
+  msaf_primary          eval=torch.Size([2, 4])  train=[torch.Size([2, 4])]  params=28.43M
+  msaf_primary_aux      eval=torch.Size([2, 4])  train=[torch.Size([2, 4]), torch.Size([2, 4]), torch.Size([2, 4])]  params=28.44M
+All variants passed. Section 1 complete.
+Losses, SAM, EarlyStopping, compute_epoch_metrics defined. Section 2 complete.
+Sanity check -- Fold_1 dataset sizes:
+Loaders from datasets/final_5_fold_pruned/Fold_1/FL_Run1_Uniform: Train=7500 Valid=292 Test=289
+Loaders from datasets/final_5_fold_pruned/Fold_1/FL_Run2_Heterogeneous: Train=7492 Valid=292 Test=289
+Section 3 complete.
+GPU: NVIDIA A100-SXM4-40GB
+VRAM: 42.3 GB
+BATCH_SIZE=32  NUM_WORKERS=8  single-GPU mode
+Section 3b complete.
+Training functions defined (train_centralized, FedProx [+aux, +robust agg, +poisoning], calibration).
+Section 4 complete.
+Evaluation utilities defined. Section 5 complete.
+[skip -- already done] Fold_1 / baseline
+[skip -- already done] Fold_1 / none_gap
+[skip -- already done] Fold_1 / eca_only_gap
+[skip -- already done] Fold_1 / cbam_eca_gap
+[skip -- already done] Fold_1 / msaf_gem_only
+[skip -- already done] Fold_1 / no_stoch_depth
+[skip -- already done] Fold_1 / no_gem_pool
+[skip -- already done] Fold_1 / msaf_primary
+[skip -- already done] Fold_1 / msaf_primary_aux
+[skip -- already done] Fold_2 / baseline
+[skip -- already done] Fold_2 / none_gap
+[skip -- already done] Fold_2 / eca_only_gap
+[skip -- already done] Fold_2 / cbam_eca_gap
+[skip -- already done] Fold_2 / msaf_gem_only
+[skip -- already done] Fold_2 / no_stoch_depth
+[skip -- already done] Fold_2 / no_gem_pool
+[skip -- already done] Fold_2 / msaf_primary
+[skip -- already done] Fold_2 / msaf_primary_aux
+[skip -- already done] Fold_3 / baseline
+[skip -- already done] Fold_3 / none_gap
+[skip -- already done] Fold_3 / eca_only_gap
+[skip -- already done] Fold_3 / cbam_eca_gap
+[skip -- already done] Fold_3 / msaf_gem_only
+[skip -- already done] Fold_3 / no_stoch_depth
+[skip -- already done] Fold_3 / no_gem_pool
+[skip -- already done] Fold_3 / msaf_primary
+[skip -- already done] Fold_3 / msaf_primary_aux
+[skip -- already done] Fold_4 / baseline
+[skip -- already done] Fold_4 / none_gap
+[skip -- already done] Fold_4 / eca_only_gap
+[skip -- already done] Fold_4 / cbam_eca_gap
+[skip -- already done] Fold_4 / msaf_gem_only
+[skip -- already done] Fold_4 / no_stoch_depth
+[skip -- already done] Fold_4 / no_gem_pool
+[skip -- already done] Fold_4 / msaf_primary
+[skip -- already done] Fold_4 / msaf_primary_aux
+[skip -- already done] Fold_5 / baseline
+[skip -- already done] Fold_5 / none_gap
+[skip -- already done] Fold_5 / eca_only_gap
+[skip -- already done] Fold_5 / cbam_eca_gap
+[skip -- already done] Fold_5 / msaf_gem_only
+[skip -- already done] Fold_5 / no_stoch_depth
+[skip -- already done] Fold_5 / no_gem_pool
+[skip -- already done] Fold_5 / msaf_primary
+[skip -- already done] Fold_5 / msaf_primary_aux
+
+Architecture ablation (all folds) complete.
+Section 6a complete.
+
+Table 3 -- Architecture Ablation (mean +/- std across folds, Wilcoxon vs. msaf_primary):
+          Config  N_folds  Acc_mean  Acc_std  F1_mean   F1_std  Prec_mean  Rec_mean  AUROC_mean  p_vs_primary  significant_(p<0.05)
+        baseline        5  0.926644 0.017425 0.918179 0.021798   0.915452  0.923675    0.987693        1.0000                 False
+        none_gap        5  0.929412 0.014450 0.923214 0.016275   0.916598  0.934749    0.987552        0.8125                 False
+    eca_only_gap        5  0.923875 0.014516 0.918016 0.015642   0.912932  0.925926    0.987128        0.4375                 False
+    cbam_eca_gap        5  0.936332 0.016022 0.930511 0.020240   0.924900  0.938091    0.989154        0.6250                 False
+   msaf_gem_only        5  0.928028 0.017833 0.920001 0.020811   0.914221  0.929873    0.988446        0.4375                 False
+  no_stoch_depth        5  0.932872 0.015567 0.925634 0.017750   0.921783  0.932918    0.987178        0.6250                 False
+     no_gem_pool        5  0.914187 0.015842 0.906581 0.016421   0.901744  0.915641    0.985246        0.3125                 False
+    msaf_primary        5  0.930796 0.011580 0.923152 0.011204   0.921722  0.928540    0.987118           NaN                 False
+msaf_primary_aux        5  0.928028 0.020224 0.917591 0.025757   0.917529  0.921973    0.987313        0.8125                 False
+Figure saved: fig_architecture_ablation.png
+Section 6b complete.
+Winning architecture: msaf_primary (ECA+CBAM+CSAH [s1,s2,s3], no aux heads)
+  Mean F1 = 0.9232 | p_vs_primary = nan
+This architecture will be used for the main 5-fold experiment below.
+[skip -- already done] Fold_1 / FL_Run1_Uniform
+[skip -- already done] Fold_1 / FL_Run2_Heterogeneous
+[skip -- already done] Fold_2 / FL_Run1_Uniform
+[skip -- already done] Fold_2 / FL_Run2_Heterogeneous
+[skip -- already done] Fold_3 / FL_Run1_Uniform
+[skip -- already done] Fold_3 / FL_Run2_Heterogeneous
+[skip -- already done] Fold_4 / FL_Run1_Uniform
+[skip -- already done] Fold_4 / FL_Run2_Heterogeneous
+[skip -- already done] Fold_5 / FL_Run1_Uniform
+[skip -- already done] Fold_5 / FL_Run2_Heterogeneous
+
+Main 5-fold x 2-run experiment complete (winning architecture).
+Section 7a complete.
+  Run1 Centralized          | Acc=0.9218+-0.0056 | F1=0.9134+-0.0086 | AUROC=0.9847+-0.0045
+  Run1 FL (FedProx)         | Acc=0.9322+-0.0201 | F1=0.9247+-0.0226 | AUROC=0.9878+-0.0032
+  Run2 Centralized          | Acc=0.9211+-0.0151 | F1=0.9102+-0.0168 | AUROC=0.9837+-0.0049
+  Run2 FL (FedProx)         | Acc=0.9204+-0.0183 | F1=0.9106+-0.0217 | AUROC=0.9858+-0.0045
+Section 7b complete -- Table 1, Table 5, fig_main_cv_summary.png saved.
+[skip -- already done] Fold_1 / focal_uniform
+[skip -- already done] Fold_1 / focal_train_dist
+[skip -- already done] Fold_1 / no_swa
+[skip -- already done] Fold_2 / focal_uniform
+[skip -- already done] Fold_2 / focal_train_dist
+[skip -- already done] Fold_2 / no_swa
+[skip -- already done] Fold_3 / focal_uniform
+[skip -- already done] Fold_3 / focal_train_dist
+[skip -- already done] Fold_3 / no_swa
+[skip -- already done] Fold_4 / focal_uniform
+[skip -- already done] Fold_4 / focal_train_dist
+[skip -- already done] Fold_4 / no_swa
+[skip -- already done] Fold_5 / focal_uniform
+[skip -- already done] Fold_5 / focal_train_dist
+[skip -- already done] Fold_5 / no_swa
+
+Table 4 -- Training-Strategy Ablation (vs. winning primary):
+          Config  N_folds  Acc_mean  Acc_std  F1_mean   F1_std  Prec_mean  Rec_mean  AUROC_mean  p_vs_primary  significant_(p<0.05)
+ winning_primary        5  0.930796 0.011580 0.923152 0.011204   0.921722  0.928540    0.987118           NaN                 False
+   focal_uniform        5  0.923875 0.015932 0.916183 0.015731   0.913240  0.925260    0.987938         0.625                 False
+focal_train_dist        5  0.931488 0.014417 0.923878 0.016254   0.921977  0.929312    0.987622         1.000                 False
+          no_swa        5  0.933564 0.017562 0.925506 0.019363   0.922153  0.932962    0.987669         1.000                 False
+Section 8 complete.
+[skip -- already done] Fold_1 / fedavg_mu0_sev0
+[skip -- already done] Fold_1 / fedprox_sev0
+[skip -- already done] Fold_1 / fedprox_trimmed_sev0
+[skip -- already done] Fold_1 / fedavg_mu0_sev20
+[skip -- already done] Fold_1 / fedprox_sev20
+[skip -- already done] Fold_1 / fedprox_trimmed_sev20
+[skip -- already done] Fold_1 / fedavg_mu0_sev40
+[skip -- already done] Fold_1 / fedprox_sev40
+[skip -- already done] Fold_1 / fedprox_trimmed_sev40
+[skip -- already done] Fold_1 / fedavg_mu0_sev60
+[skip -- already done] Fold_1 / fedprox_sev60
+[skip -- already done] Fold_1 / fedprox_trimmed_sev60
+[skip -- already done] Fold_2 / fedavg_mu0_sev0
+[skip -- already done] Fold_2 / fedprox_sev0
+[skip -- already done] Fold_2 / fedprox_trimmed_sev0
+[skip -- already done] Fold_2 / fedavg_mu0_sev20
+[skip -- already done] Fold_2 / fedprox_sev20
+[skip -- already done] Fold_2 / fedprox_trimmed_sev20
+[skip -- already done] Fold_2 / fedavg_mu0_sev40
+[skip -- already done] Fold_2 / fedprox_sev40
+[skip -- already done] Fold_2 / fedprox_trimmed_sev40
+[skip -- already done] Fold_2 / fedavg_mu0_sev60
+[skip -- already done] Fold_2 / fedprox_sev60
+[skip -- already done] Fold_2 / fedprox_trimmed_sev60
+[skip -- already done] Fold_3 / fedavg_mu0_sev0
+[skip -- already done] Fold_3 / fedprox_sev0
+[skip -- already done] Fold_3 / fedprox_trimmed_sev0
+[skip -- already done] Fold_3 / fedavg_mu0_sev20
+[skip -- already done] Fold_3 / fedprox_sev20
+[skip -- already done] Fold_3 / fedprox_trimmed_sev20
+[skip -- already done] Fold_3 / fedavg_mu0_sev40
+[skip -- already done] Fold_3 / fedprox_sev40
+[skip -- already done] Fold_3 / fedprox_trimmed_sev40
+[skip -- already done] Fold_3 / fedavg_mu0_sev60
+[skip -- already done] Fold_3 / fedprox_sev60
+[skip -- already done] Fold_3 / fedprox_trimmed_sev60
+[skip -- already done] Fold_4 / fedavg_mu0_sev0
+
+=== Poisoning experiment: Fold_4 | severity=0.0 | defense=fedprox ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=fedavg | use_aux_loss=False | poison=(client=None, frac=0.0)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.5310 | Val: L=0.2210 A=0.9144 P=0.9078 R=0.9103 F1=0.9081 | TrAcc=0.9662 | ES=0/18
+  Round  10/50 | AvgLL=0.2659 | Val: L=0.2225 A=0.9247 P=0.9129 R=0.9278 F1=0.9186 | TrAcc=0.9873 | ES=1/18
+  Round  15/50 | AvgLL=0.1942 | Val: L=0.1894 A=0.9315 P=0.9154 R=0.9358 F1=0.9234 | TrAcc=0.9912 | ES=6/18
+  Round  20/50 | AvgLL=0.1765 | Val: L=0.2030 A=0.9418 P=0.9254 R=0.9458 F1=0.9337 | TrAcc=0.9923 | ES=11/18
+  Round  25/50 | AvgLL=0.1516 | Val: L=0.1745 A=0.9521 P=0.9454 R=0.9504 F1=0.9476 | TrAcc=0.9945 | ES=0/18
+  Round  30/50 | AvgLL=0.1204 | Val: L=0.1798 A=0.9384 P=0.9257 R=0.9359 F1=0.9301 | TrAcc=0.9955 | ES=2/18
+  Round  35/50 | AvgLL=0.1129 | Val: L=0.1873 A=0.9384 P=0.9292 R=0.9334 F1=0.9303 | TrAcc=0.9960 | ES=7/18
+  Round  40/50 | AvgLL=0.0907 | Val: L=0.1606 A=0.9521 P=0.9451 R=0.9463 F1=0.9456 | TrAcc=0.9968 | ES=4/18
+  Round  45/50 | AvgLL=0.1075 | Val: L=0.1604 A=0.9555 P=0.9451 R=0.9550 F1=0.9497 | TrAcc=0.9968 | ES=9/18
+  Round  50/50 | AvgLL=0.1223 | Val: L=0.1623 A=0.9521 P=0.9428 R=0.9535 F1=0.9477 | TrAcc=0.9966 | ES=14/18
+  Best val F1: 0.9537
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_sev0/fedprox_sev0_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_sev0
+--- fedprox_sev0 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.71      0.93      0.80        42
+     Healthy       0.99      0.96      0.97        92
+     Measles       0.93      0.98      0.96        44
+   Monkeypox       0.94      0.84      0.89       111
+
+    accuracy                           0.91       289
+   macro avg       0.89      0.93      0.90       289
+weighted avg       0.92      0.91      0.91       289
+
+  Accuracy         : 0.9100
+  Macro-Precision  : 0.8930
+  Macro-Recall     : 0.9251
+  Macro-F1         : 0.9044
+  Weighted-F1      : 0.9121
+  AUROC (macro)    : 0.9884
+  AUROC (micro)    : 0.9879
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_sev0
+
+=== Poisoning experiment: Fold_4 | severity=0.0 | defense=fedprox_trimmed ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=trimmed_mean | use_aux_loss=False | poison=(client=None, frac=0.0)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.5864 | Val: L=0.2191 A=0.9110 P=0.8984 R=0.9157 F1=0.9049 | TrAcc=0.9663 | ES=0/18
+  Round  10/50 | AvgLL=0.3412 | Val: L=0.2202 A=0.9315 P=0.9185 R=0.9396 F1=0.9269 | TrAcc=0.9845 | ES=2/18
+  Round  15/50 | AvgLL=0.2455 | Val: L=0.2016 A=0.9315 P=0.9173 R=0.9355 F1=0.9243 | TrAcc=0.9906 | ES=3/18
+  Round  20/50 | AvgLL=0.2030 | Val: L=0.1883 A=0.9521 P=0.9421 R=0.9535 F1=0.9467 | TrAcc=0.9928 | ES=0/18
+  Round  25/50 | AvgLL=0.1799 | Val: L=0.2000 A=0.9452 P=0.9339 R=0.9480 F1=0.9399 | TrAcc=0.9939 | ES=5/18
+  Round  30/50 | AvgLL=0.1539 | Val: L=0.1893 A=0.9521 P=0.9454 R=0.9492 F1=0.9471 | TrAcc=0.9947 | ES=0/18
+  Round  35/50 | AvgLL=0.1348 | Val: L=0.2259 A=0.9384 P=0.9243 R=0.9441 F1=0.9320 | TrAcc=0.9963 | ES=5/18
+  Round  40/50 | AvgLL=0.1112 | Val: L=0.2117 A=0.9384 P=0.9213 R=0.9400 F1=0.9294 | TrAcc=0.9973 | ES=10/18
+  Round  45/50 | AvgLL=0.1314 | Val: L=0.2362 A=0.9349 P=0.9191 R=0.9414 F1=0.9279 | TrAcc=0.9961 | ES=15/18
+  Round  48/50 | AvgLL=0.1063 | Val: L=0.2029 A=0.9486 P=0.9393 R=0.9513 F1=0.9442 | TrAcc=0.9973 | ES=18/18
+  Early stopping at round 48.
+  Best val F1: 0.9471
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_trimmed_sev0/fedprox_trimmed_sev0_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_trimmed_sev0
+--- fedprox_trimmed_sev0 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.76      0.90      0.83        42
+     Healthy       0.98      0.96      0.97        92
+     Measles       0.93      0.98      0.96        44
+   Monkeypox       0.93      0.86      0.90       111
+
+    accuracy                           0.92       289
+   macro avg       0.90      0.93      0.91       289
+weighted avg       0.92      0.92      0.92       289
+
+  Accuracy         : 0.9170
+  Macro-Precision  : 0.9011
+  Macro-Recall     : 0.9259
+  Macro-F1         : 0.9115
+  Weighted-F1      : 0.9180
+  AUROC (macro)    : 0.9872
+  AUROC (micro)    : 0.9891
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_trimmed_sev0
+
+=== Poisoning experiment: Fold_4 | severity=0.2 | defense=fedavg_mu0 ===
+FedProx: 50 rounds x 3 local epochs | mu=0.0 | aggregator=fedavg | use_aux_loss=False | poison=(client=0, frac=0.2)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.7003 | Val: L=0.2218 A=0.9281 P=0.9146 R=0.9369 F1=0.9226 | TrAcc=0.9243 | ES=0/18
+  Round  10/50 | AvgLL=0.6053 | Val: L=0.2077 A=0.9349 P=0.9174 R=0.9385 F1=0.9269 | TrAcc=0.9414 | ES=0/18
+  Round  15/50 | AvgLL=0.5632 | Val: L=0.2446 A=0.9418 P=0.9259 R=0.9460 F1=0.9349 | TrAcc=0.9437 | ES=3/18
+  Round  20/50 | AvgLL=0.5297 | Val: L=0.2021 A=0.9418 P=0.9297 R=0.9427 F1=0.9358 | TrAcc=0.9474 | ES=8/18
+  Round  25/50 | AvgLL=0.4839 | Val: L=0.2076 A=0.9418 P=0.9286 R=0.9432 F1=0.9349 | TrAcc=0.9487 | ES=4/18
+  Round  30/50 | AvgLL=0.4781 | Val: L=0.2066 A=0.9384 P=0.9256 R=0.9400 F1=0.9321 | TrAcc=0.9539 | ES=2/18
+  Round  35/50 | AvgLL=0.4393 | Val: L=0.2701 A=0.9349 P=0.9169 R=0.9411 F1=0.9273 | TrAcc=0.9553 | ES=7/18
+  Round  40/50 | AvgLL=0.4559 | Val: L=0.2742 A=0.9452 P=0.9288 R=0.9514 F1=0.9387 | TrAcc=0.9541 | ES=12/18
+  Round  45/50 | AvgLL=0.4570 | Val: L=0.2365 A=0.9486 P=0.9352 R=0.9505 F1=0.9422 | TrAcc=0.9554 | ES=1/18
+  Round  50/50 | AvgLL=0.3961 | Val: L=0.3153 A=0.9349 P=0.9190 R=0.9452 F1=0.9302 | TrAcc=0.9592 | ES=6/18
+  Best val F1: 0.9539
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedavg_mu0_sev20/fedavg_mu0_sev20_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedavg_mu0_sev20
+--- fedavg_mu0_sev20 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.69      0.95      0.80        42
+     Healthy       1.00      0.96      0.98        92
+     Measles       0.98      0.95      0.97        44
+   Monkeypox       0.94      0.85      0.89       111
+
+    accuracy                           0.91       289
+   macro avg       0.90      0.93      0.91       289
+weighted avg       0.93      0.91      0.92       289
+
+  Accuracy         : 0.9135
+  Macro-Precision  : 0.9016
+  Macro-Recall     : 0.9276
+  Macro-F1         : 0.9086
+  Weighted-F1      : 0.9167
+  AUROC (macro)    : 0.9884
+  AUROC (micro)    : 0.9888
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedavg_mu0_sev20
+
+=== Poisoning experiment: Fold_4 | severity=0.2 | defense=fedprox ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=fedavg | use_aux_loss=False | poison=(client=0, frac=0.2)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.9459 | Val: L=0.2295 A=0.9178 P=0.9010 R=0.9361 F1=0.9138 | TrAcc=0.9172 | ES=0/18
+  Round  10/50 | AvgLL=0.7242 | Val: L=0.1818 A=0.9315 P=0.9174 R=0.9360 F1=0.9255 | TrAcc=0.9342 | ES=4/18
+  Round  15/50 | AvgLL=0.6738 | Val: L=0.1650 A=0.9452 P=0.9349 R=0.9490 F1=0.9412 | TrAcc=0.9379 | ES=0/18
+  Round  20/50 | AvgLL=0.5419 | Val: L=0.1690 A=0.9418 P=0.9333 R=0.9387 F1=0.9355 | TrAcc=0.9448 | ES=3/18
+  Round  25/50 | AvgLL=0.5286 | Val: L=0.1689 A=0.9555 P=0.9418 R=0.9550 F1=0.9479 | TrAcc=0.9492 | ES=0/18
+  Round  30/50 | AvgLL=0.4829 | Val: L=0.1827 A=0.9384 P=0.9202 R=0.9405 F1=0.9291 | TrAcc=0.9519 | ES=4/18
+  Round  35/50 | AvgLL=0.4614 | Val: L=0.1832 A=0.9349 P=0.9205 R=0.9378 F1=0.9282 | TrAcc=0.9504 | ES=9/18
+  Round  40/50 | AvgLL=0.4366 | Val: L=0.2007 A=0.9452 P=0.9292 R=0.9519 F1=0.9389 | TrAcc=0.9532 | ES=14/18
+  Round  44/50 | AvgLL=0.3853 | Val: L=0.1740 A=0.9452 P=0.9308 R=0.9445 F1=0.9367 | TrAcc=0.9550 | ES=18/18
+  Early stopping at round 44.
+  Best val F1: 0.9482
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_sev20/fedprox_sev20_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_sev20
+--- fedprox_sev20 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.76      0.88      0.81        42
+     Healthy       0.98      0.98      0.98        92
+     Measles       0.90      0.98      0.93        44
+   Monkeypox       0.95      0.86      0.90       111
+
+    accuracy                           0.92       289
+   macro avg       0.89      0.92      0.91       289
+weighted avg       0.92      0.92      0.92       289
+
+  Accuracy         : 0.9170
+  Macro-Precision  : 0.8948
+  Macro-Recall     : 0.9231
+  Macro-F1         : 0.9067
+  Weighted-F1      : 0.9178
+  AUROC (macro)    : 0.9864
+  AUROC (micro)    : 0.9873
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_sev20
+
+=== Poisoning experiment: Fold_4 | severity=0.2 | defense=fedprox_trimmed ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=trimmed_mean | use_aux_loss=False | poison=(client=0, frac=0.2)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=1.0174 | Val: L=0.2045 A=0.9212 P=0.9107 R=0.9248 F1=0.9169 | TrAcc=0.9157 | ES=1/18
+  Round  10/50 | AvgLL=0.7169 | Val: L=0.1757 A=0.9349 P=0.9220 R=0.9414 F1=0.9302 | TrAcc=0.9381 | ES=0/18
+  Round  15/50 | AvgLL=0.6414 | Val: L=0.1704 A=0.9384 P=0.9224 R=0.9441 F1=0.9314 | TrAcc=0.9424 | ES=3/18
+  Round  20/50 | AvgLL=0.5558 | Val: L=0.1664 A=0.9452 P=0.9315 R=0.9480 F1=0.9386 | TrAcc=0.9488 | ES=8/18
+  Round  25/50 | AvgLL=0.4794 | Val: L=0.1593 A=0.9486 P=0.9337 R=0.9508 F1=0.9411 | TrAcc=0.9522 | ES=13/18
+  Round  30/50 | AvgLL=0.4009 | Val: L=0.1805 A=0.9384 P=0.9247 R=0.9403 F1=0.9310 | TrAcc=0.9567 | ES=18/18
+  Early stopping at round 30.
+  Best val F1: 0.9492
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_trimmed_sev20/fedprox_trimmed_sev20_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_trimmed_sev20
+--- fedprox_trimmed_sev20 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.75      0.93      0.83        42
+     Healthy       0.98      0.95      0.96        92
+     Measles       0.91      0.98      0.95        44
+   Monkeypox       0.94      0.86      0.90       111
+
+    accuracy                           0.91       289
+   macro avg       0.90      0.93      0.91       289
+weighted avg       0.92      0.91      0.91       289
+
+  Accuracy         : 0.9135
+  Macro-Precision  : 0.8958
+  Macro-Recall     : 0.9268
+  Macro-F1         : 0.9081
+  Weighted-F1      : 0.9147
+  AUROC (macro)    : 0.9860
+  AUROC (micro)    : 0.9853
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_trimmed_sev20
+
+=== Poisoning experiment: Fold_4 | severity=0.4 | defense=fedavg_mu0 ===
+FedProx: 50 rounds x 3 local epochs | mu=0.0 | aggregator=fedavg | use_aux_loss=False | poison=(client=0, frac=0.4)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.9722 | Val: L=0.2222 A=0.9247 P=0.9082 R=0.9339 F1=0.9189 | TrAcc=0.8748 | ES=2/18
+  Round  10/50 | AvgLL=0.8749 | Val: L=0.1867 A=0.9349 P=0.9185 R=0.9378 F1=0.9270 | TrAcc=0.8905 | ES=1/18
+  Round  15/50 | AvgLL=0.8429 | Val: L=0.1858 A=0.9452 P=0.9355 R=0.9450 F1=0.9398 | TrAcc=0.8984 | ES=0/18
+  Round  20/50 | AvgLL=0.8161 | Val: L=0.1765 A=0.9486 P=0.9346 R=0.9505 F1=0.9419 | TrAcc=0.9007 | ES=4/18
+  Round  25/50 | AvgLL=0.7745 | Val: L=0.2429 A=0.9418 P=0.9271 R=0.9456 F1=0.9355 | TrAcc=0.9059 | ES=9/18
+  Round  30/50 | AvgLL=0.7890 | Val: L=0.2501 A=0.9452 P=0.9304 R=0.9483 F1=0.9385 | TrAcc=0.9082 | ES=14/18
+  Round  34/50 | AvgLL=0.8064 | Val: L=0.2041 A=0.9418 P=0.9299 R=0.9391 F1=0.9341 | TrAcc=0.9106 | ES=18/18
+  Early stopping at round 34.
+  Best val F1: 0.9531
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedavg_mu0_sev40/fedavg_mu0_sev40_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedavg_mu0_sev40
+--- fedavg_mu0_sev40 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.72      0.90      0.80        42
+     Healthy       1.00      0.96      0.98        92
+     Measles       0.95      0.95      0.95        44
+   Monkeypox       0.92      0.86      0.89       111
+
+    accuracy                           0.91       289
+   macro avg       0.90      0.92      0.91       289
+weighted avg       0.92      0.91      0.92       289
+
+  Accuracy         : 0.9135
+  Macro-Precision  : 0.8987
+  Macro-Recall     : 0.9202
+  Macro-F1         : 0.9063
+  Weighted-F1      : 0.9159
+  AUROC (macro)    : 0.9876
+  AUROC (micro)    : 0.9899
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedavg_mu0_sev40
+
+=== Poisoning experiment: Fold_4 | severity=0.4 | defense=fedprox ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=fedavg | use_aux_loss=False | poison=(client=0, frac=0.4)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=1.2402 | Val: L=0.2136 A=0.9315 P=0.9149 R=0.9429 F1=0.9260 | TrAcc=0.8651 | ES=1/18
+  Round  10/50 | AvgLL=0.9832 | Val: L=0.1846 A=0.9384 P=0.9253 R=0.9446 F1=0.9331 | TrAcc=0.8858 | ES=0/18
+  Round  15/50 | AvgLL=0.9319 | Val: L=0.2019 A=0.9281 P=0.9105 R=0.9338 F1=0.9195 | TrAcc=0.8926 | ES=2/18
+  Round  20/50 | AvgLL=0.8180 | Val: L=0.2177 A=0.9247 P=0.9128 R=0.9306 F1=0.9195 | TrAcc=0.9034 | ES=7/18
+  Round  25/50 | AvgLL=0.7926 | Val: L=0.1733 A=0.9521 P=0.9464 R=0.9494 F1=0.9475 | TrAcc=0.9037 | ES=0/18
+  Round  30/50 | AvgLL=0.7914 | Val: L=0.1532 A=0.9555 P=0.9450 R=0.9555 F1=0.9499 | TrAcc=0.9041 | ES=3/18
+  Round  35/50 | AvgLL=0.7161 | Val: L=0.1888 A=0.9384 P=0.9236 R=0.9428 F1=0.9321 | TrAcc=0.9085 | ES=8/18
+  Round  40/50 | AvgLL=0.6910 | Val: L=0.1930 A=0.9315 P=0.9241 R=0.9389 F1=0.9287 | TrAcc=0.9104 | ES=13/18
+  Round  45/50 | AvgLL=0.6118 | Val: L=0.1956 A=0.9349 P=0.9202 R=0.9411 F1=0.9290 | TrAcc=0.9204 | ES=18/18
+  Early stopping at round 45.
+  Best val F1: 0.9502
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_sev40/fedprox_sev40_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_sev40
+--- fedprox_sev40 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.75      0.95      0.84        42
+     Healthy       0.98      0.97      0.97        92
+     Measles       0.93      0.95      0.94        44
+   Monkeypox       0.95      0.86      0.90       111
+
+    accuracy                           0.92       289
+   macro avg       0.90      0.93      0.91       289
+weighted avg       0.93      0.92      0.92       289
+
+  Accuracy         : 0.9204
+  Macro-Precision  : 0.9040
+  Macro-Recall     : 0.9325
+  Macro-F1         : 0.9148
+  Weighted-F1      : 0.9216
+  AUROC (macro)    : 0.9879
+  AUROC (micro)    : 0.9889
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_sev40
+
+=== Poisoning experiment: Fold_4 | severity=0.4 | defense=fedprox_trimmed ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=trimmed_mean | use_aux_loss=False | poison=(client=0, frac=0.4)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=1.1894 | Val: L=0.2452 A=0.9144 P=0.9020 R=0.9165 F1=0.9081 | TrAcc=0.8717 | ES=0/18
+  Round  10/50 | AvgLL=0.9886 | Val: L=0.2483 A=0.9247 P=0.9057 R=0.9351 F1=0.9177 | TrAcc=0.8903 | ES=4/18
+  Round  15/50 | AvgLL=0.8501 | Val: L=0.2065 A=0.9418 P=0.9301 R=0.9463 F1=0.9368 | TrAcc=0.9008 | ES=0/18
+  Round  20/50 | AvgLL=0.7738 | Val: L=0.2332 A=0.9281 P=0.9084 R=0.9338 F1=0.9192 | TrAcc=0.9071 | ES=5/18
+  Round  25/50 | AvgLL=0.7172 | Val: L=0.2142 A=0.9349 P=0.9196 R=0.9349 F1=0.9259 | TrAcc=0.9143 | ES=10/18
+  Round  30/50 | AvgLL=0.6608 | Val: L=0.2415 A=0.9384 P=0.9214 R=0.9441 F1=0.9304 | TrAcc=0.9197 | ES=15/18
+  Round  33/50 | AvgLL=0.6481 | Val: L=0.2623 A=0.9178 P=0.9019 R=0.9247 F1=0.9108 | TrAcc=0.9166 | ES=18/18
+  Early stopping at round 33.
+  Best val F1: 0.9368
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_trimmed_sev40/fedprox_trimmed_sev40_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_trimmed_sev40
+--- fedprox_trimmed_sev40 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.73      0.98      0.84        42
+     Healthy       0.99      0.92      0.96        92
+     Measles       0.95      0.95      0.95        44
+   Monkeypox       0.91      0.85      0.88       111
+
+    accuracy                           0.91       289
+   macro avg       0.90      0.93      0.91       289
+weighted avg       0.92      0.91      0.91       289
+
+  Accuracy         : 0.9066
+  Macro-Precision  : 0.8969
+  Macro-Recall     : 0.9254
+  Macro-F1         : 0.9062
+  Weighted-F1      : 0.9084
+  AUROC (macro)    : 0.9889
+  AUROC (micro)    : 0.9899
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_trimmed_sev40
+
+=== Poisoning experiment: Fold_4 | severity=0.6 | defense=fedavg_mu0 ===
+FedProx: 50 rounds x 3 local epochs | mu=0.0 | aggregator=fedavg | use_aux_loss=False | poison=(client=0, frac=0.6)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=1.1491 | Val: L=0.2241 A=0.9315 P=0.9180 R=0.9424 F1=0.9282 | TrAcc=0.8435 | ES=0/18
+  Round  10/50 | AvgLL=1.1038 | Val: L=0.1942 A=0.9418 P=0.9315 R=0.9463 F1=0.9371 | TrAcc=0.8572 | ES=0/18
+  Round  15/50 | AvgLL=1.0747 | Val: L=0.2062 A=0.9418 P=0.9282 R=0.9460 F1=0.9363 | TrAcc=0.8632 | ES=2/18
+  Round  20/50 | AvgLL=1.0758 | Val: L=0.2201 A=0.9418 P=0.9259 R=0.9460 F1=0.9349 | TrAcc=0.8685 | ES=4/18
+  Round  25/50 | AvgLL=0.9987 | Val: L=0.2448 A=0.9452 P=0.9298 R=0.9483 F1=0.9382 | TrAcc=0.8732 | ES=9/18
+  Round  30/50 | AvgLL=1.0062 | Val: L=0.2675 A=0.9178 P=0.8980 R=0.9261 F1=0.9082 | TrAcc=0.8774 | ES=14/18
+  Round  34/50 | AvgLL=0.9223 | Val: L=0.2097 A=0.9418 P=0.9247 R=0.9496 F1=0.9354 | TrAcc=0.8817 | ES=18/18
+  Early stopping at round 34.
+  Best val F1: 0.9475
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedavg_mu0_sev60/fedavg_mu0_sev60_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedavg_mu0_sev60
+--- fedavg_mu0_sev60 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.74      0.95      0.83        42
+     Healthy       0.99      0.96      0.97        92
+     Measles       0.89      0.95      0.92        44
+   Monkeypox       0.95      0.85      0.90       111
+
+    accuracy                           0.91       289
+   macro avg       0.89      0.93      0.91       289
+weighted avg       0.92      0.91      0.92       289
+
+  Accuracy         : 0.9135
+  Macro-Precision  : 0.8932
+  Macro-Recall     : 0.9276
+  Macro-F1         : 0.9060
+  Weighted-F1      : 0.9150
+  AUROC (macro)    : 0.9892
+  AUROC (micro)    : 0.9888
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedavg_mu0_sev60
+
+=== Poisoning experiment: Fold_4 | severity=0.6 | defense=fedprox ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=fedavg | use_aux_loss=False | poison=(client=0, frac=0.6)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=1.3885 | Val: L=0.2663 A=0.9110 P=0.8965 R=0.9367 F1=0.9076 | TrAcc=0.8367 | ES=2/18
+  Round  10/50 | AvgLL=1.1876 | Val: L=0.1959 A=0.9315 P=0.9111 R=0.9358 F1=0.9218 | TrAcc=0.8548 | ES=2/18
+  Round  15/50 | AvgLL=1.0874 | Val: L=0.1730 A=0.9349 P=0.9199 R=0.9380 F1=0.9281 | TrAcc=0.8608 | ES=2/18
+  Round  20/50 | AvgLL=1.0094 | Val: L=0.1763 A=0.9349 P=0.9195 R=0.9406 F1=0.9286 | TrAcc=0.8670 | ES=2/18
+  Round  25/50 | AvgLL=0.9934 | Val: L=0.1524 A=0.9452 P=0.9309 R=0.9483 F1=0.9386 | TrAcc=0.8676 | ES=0/18
+  Round  30/50 | AvgLL=0.9031 | Val: L=0.1686 A=0.9486 P=0.9388 R=0.9539 F1=0.9445 | TrAcc=0.8748 | ES=0/18
+  Round  35/50 | AvgLL=0.8633 | Val: L=0.1711 A=0.9452 P=0.9335 R=0.9471 F1=0.9394 | TrAcc=0.8765 | ES=5/18
+  Round  40/50 | AvgLL=0.8432 | Val: L=0.1526 A=0.9486 P=0.9373 R=0.9505 F1=0.9434 | TrAcc=0.8817 | ES=4/18
+  Round  45/50 | AvgLL=0.8168 | Val: L=0.1937 A=0.9212 P=0.9044 R=0.9357 F1=0.9173 | TrAcc=0.8826 | ES=9/18
+  Round  50/50 | AvgLL=0.8416 | Val: L=0.1850 A=0.9281 P=0.9086 R=0.9369 F1=0.9201 | TrAcc=0.8844 | ES=14/18
+  Best val F1: 0.9458
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_sev60/fedprox_sev60_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_sev60
+--- fedprox_sev60 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.76      0.93      0.84        42
+     Healthy       0.99      0.96      0.97        92
+     Measles       0.90      0.98      0.93        44
+   Monkeypox       0.95      0.86      0.91       111
+
+    accuracy                           0.92       289
+   macro avg       0.90      0.93      0.91       289
+weighted avg       0.93      0.92      0.92       289
+
+  Accuracy         : 0.9204
+  Macro-Precision  : 0.8999
+  Macro-Recall     : 0.9318
+  Macro-F1         : 0.9129
+  Weighted-F1      : 0.9216
+  AUROC (macro)    : 0.9831
+  AUROC (micro)    : 0.9834
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_sev60
+
+=== Poisoning experiment: Fold_4 | severity=0.6 | defense=fedprox_trimmed ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=trimmed_mean | use_aux_loss=False | poison=(client=0, frac=0.6)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=1.4577 | Val: L=0.2851 A=0.9178 P=0.8990 R=0.9345 F1=0.9117 | TrAcc=0.8303 | ES=1/18
+  Round  10/50 | AvgLL=1.1515 | Val: L=0.2220 A=0.9315 P=0.9165 R=0.9365 F1=0.9243 | TrAcc=0.8524 | ES=1/18
+  Round  15/50 | AvgLL=1.0752 | Val: L=0.2234 A=0.9247 P=0.9057 R=0.9320 F1=0.9164 | TrAcc=0.8639 | ES=6/18
+  Round  20/50 | AvgLL=0.9596 | Val: L=0.1959 A=0.9349 P=0.9178 R=0.9387 F1=0.9270 | TrAcc=0.8711 | ES=11/18
+  Round  25/50 | AvgLL=0.9118 | Val: L=0.1920 A=0.9418 P=0.9265 R=0.9468 F1=0.9351 | TrAcc=0.8772 | ES=16/18
+  Round  27/50 | AvgLL=0.8952 | Val: L=0.2098 A=0.9418 P=0.9277 R=0.9511 F1=0.9377 | TrAcc=0.8791 | ES=18/18
+  Early stopping at round 27.
+  Best val F1: 0.9387
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_trimmed_sev60/fedprox_trimmed_sev60_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_trimmed_sev60
+--- fedprox_trimmed_sev60 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.75      0.93      0.83        42
+     Healthy       0.98      0.96      0.97        92
+     Measles       0.90      0.98      0.93        44
+   Monkeypox       0.95      0.85      0.90       111
+
+    accuracy                           0.91       289
+   macro avg       0.89      0.93      0.91       289
+weighted avg       0.92      0.91      0.91       289
+
+  Accuracy         : 0.9135
+  Macro-Precision  : 0.8933
+  Macro-Recall     : 0.9273
+  Macro-F1         : 0.9067
+  Weighted-F1      : 0.9146
+  AUROC (macro)    : 0.9851
+  AUROC (micro)    : 0.9836
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_4/fedprox_trimmed_sev60
+
+=== Poisoning experiment: Fold_5 | severity=0.0 | defense=fedavg_mu0 ===
+FedProx: 50 rounds x 3 local epochs | mu=0.0 | aggregator=fedavg | use_aux_loss=False | poison=(client=None, frac=0.0)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.2420 | Val: L=0.3398 A=0.8767 P=0.8632 R=0.8801 F1=0.8672 | TrAcc=0.9784 | ES=1/18
+  Round  10/50 | AvgLL=0.1329 | Val: L=0.2968 A=0.9178 P=0.9124 R=0.9140 F1=0.9108 | TrAcc=0.9895 | ES=1/18
+  Round  15/50 | AvgLL=0.0708 | Val: L=0.3336 A=0.9075 P=0.8868 R=0.9063 F1=0.8955 | TrAcc=0.9941 | ES=6/18
+  Round  20/50 | AvgLL=0.0683 | Val: L=0.3449 A=0.9110 P=0.8881 R=0.9119 F1=0.8979 | TrAcc=0.9958 | ES=11/18
+  Round  25/50 | AvgLL=0.0456 | Val: L=0.3832 A=0.9110 P=0.8960 R=0.9126 F1=0.9021 | TrAcc=0.9965 | ES=16/18
+  Round  27/50 | AvgLL=0.0782 | Val: L=0.4196 A=0.9007 P=0.8890 R=0.9066 F1=0.8946 | TrAcc=0.9956 | ES=18/18
+  Early stopping at round 27.
+  Best val F1: 0.9199
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedavg_mu0_sev0/fedavg_mu0_sev0_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedavg_mu0_sev0
+--- fedavg_mu0_sev0 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.85      0.79      0.81        42
+     Healthy       0.95      0.96      0.95        92
+     Measles       0.95      0.93      0.94        44
+   Monkeypox       0.90      0.93      0.92       111
+
+    accuracy                           0.92       289
+   macro avg       0.91      0.90      0.91       289
+weighted avg       0.92      0.92      0.92       289
+
+  Accuracy         : 0.9170
+  Macro-Precision  : 0.9123
+  Macro-Recall     : 0.9005
+  Macro-F1         : 0.9061
+  Weighted-F1      : 0.9164
+  AUROC (macro)    : 0.9851
+  AUROC (micro)    : 0.9876
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedavg_mu0_sev0
+
+=== Poisoning experiment: Fold_5 | severity=0.0 | defense=fedprox ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=fedavg | use_aux_loss=False | poison=(client=None, frac=0.0)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.4778 | Val: L=0.3254 A=0.8938 P=0.8886 R=0.8912 F1=0.8872 | TrAcc=0.9715 | ES=0/18
+  Round  10/50 | AvgLL=0.2813 | Val: L=0.2995 A=0.9041 P=0.8995 R=0.8929 F1=0.8957 | TrAcc=0.9860 | ES=0/18
+  Round  15/50 | AvgLL=0.2223 | Val: L=0.3279 A=0.8870 P=0.8836 R=0.8999 F1=0.8852 | TrAcc=0.9896 | ES=2/18
+  Round  20/50 | AvgLL=0.1829 | Val: L=0.3193 A=0.9007 P=0.8965 R=0.9124 F1=0.8990 | TrAcc=0.9932 | ES=1/18
+  Round  25/50 | AvgLL=0.1563 | Val: L=0.2991 A=0.9075 P=0.8974 R=0.9138 F1=0.9013 | TrAcc=0.9943 | ES=6/18
+  Round  30/50 | AvgLL=0.1138 | Val: L=0.2947 A=0.9041 P=0.8883 R=0.9079 F1=0.8951 | TrAcc=0.9961 | ES=11/18
+  Round  35/50 | AvgLL=0.1316 | Val: L=0.2689 A=0.9110 P=0.8986 R=0.9195 F1=0.9054 | TrAcc=0.9960 | ES=16/18
+  Round  37/50 | AvgLL=0.0930 | Val: L=0.3092 A=0.9007 P=0.8875 R=0.9093 F1=0.8931 | TrAcc=0.9969 | ES=18/18
+  Early stopping at round 37.
+  Best val F1: 0.9145
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_sev0/fedprox_sev0_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_sev0
+--- fedprox_sev0 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.78      0.69      0.73        42
+     Healthy       0.95      0.97      0.96        92
+     Measles       0.93      0.98      0.96        44
+   Monkeypox       0.89      0.90      0.90       111
+
+    accuracy                           0.90       289
+   macro avg       0.89      0.88      0.89       289
+weighted avg       0.90      0.90      0.90       289
+
+  Accuracy         : 0.9031
+  Macro-Precision  : 0.8896
+  Macro-Recall     : 0.8840
+  Macro-F1         : 0.8859
+  Weighted-F1      : 0.9013
+  AUROC (macro)    : 0.9822
+  AUROC (micro)    : 0.9847
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_sev0
+
+=== Poisoning experiment: Fold_5 | severity=0.0 | defense=fedprox_trimmed ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=trimmed_mean | use_aux_loss=False | poison=(client=None, frac=0.0)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.4597 | Val: L=0.3374 A=0.8836 P=0.8696 R=0.9035 F1=0.8797 | TrAcc=0.9735 | ES=0/18
+  Round  10/50 | AvgLL=0.3242 | Val: L=0.3191 A=0.9041 P=0.8877 R=0.9174 F1=0.8986 | TrAcc=0.9856 | ES=0/18
+  Round  15/50 | AvgLL=0.2269 | Val: L=0.2994 A=0.9212 P=0.9062 R=0.9327 F1=0.9161 | TrAcc=0.9911 | ES=0/18
+  Round  20/50 | AvgLL=0.2089 | Val: L=0.2752 A=0.9110 P=0.8951 R=0.9193 F1=0.9043 | TrAcc=0.9926 | ES=5/18
+  Round  25/50 | AvgLL=0.1696 | Val: L=0.2792 A=0.9178 P=0.9037 R=0.9307 F1=0.9128 | TrAcc=0.9948 | ES=10/18
+  Round  30/50 | AvgLL=0.1242 | Val: L=0.3038 A=0.9144 P=0.9015 R=0.9253 F1=0.9085 | TrAcc=0.9960 | ES=15/18
+  Round  33/50 | AvgLL=0.1370 | Val: L=0.3410 A=0.9007 P=0.8795 R=0.9124 F1=0.8911 | TrAcc=0.9963 | ES=18/18
+  Early stopping at round 33.
+  Best val F1: 0.9161
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_trimmed_sev0/fedprox_trimmed_sev0_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_trimmed_sev0
+--- fedprox_trimmed_sev0 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.82      0.76      0.79        42
+     Healthy       0.96      0.95      0.95        92
+     Measles       0.93      0.95      0.94        44
+   Monkeypox       0.91      0.94      0.92       111
+
+    accuracy                           0.92       289
+   macro avg       0.91      0.90      0.90       289
+weighted avg       0.92      0.92      0.92       289
+
+  Accuracy         : 0.9170
+  Macro-Precision  : 0.9055
+  Macro-Recall     : 0.8998
+  Macro-F1         : 0.9023
+  Weighted-F1      : 0.9163
+  AUROC (macro)    : 0.9852
+  AUROC (micro)    : 0.9880
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_trimmed_sev0
+
+=== Poisoning experiment: Fold_5 | severity=0.2 | defense=fedavg_mu0 ===
+FedProx: 50 rounds x 3 local epochs | mu=0.0 | aggregator=fedavg | use_aux_loss=False | poison=(client=0, frac=0.2)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.6821 | Val: L=0.3510 A=0.8767 P=0.8649 R=0.8924 F1=0.8730 | TrAcc=0.9292 | ES=1/18
+  Round  10/50 | AvgLL=0.5600 | Val: L=0.3285 A=0.9110 P=0.9058 R=0.9131 F1=0.9058 | TrAcc=0.9407 | ES=0/18
+  Round  15/50 | AvgLL=0.5403 | Val: L=0.2908 A=0.9178 P=0.9045 R=0.9163 F1=0.9101 | TrAcc=0.9434 | ES=0/18
+  Round  20/50 | AvgLL=0.5081 | Val: L=0.3717 A=0.8938 P=0.8831 R=0.8910 F1=0.8843 | TrAcc=0.9496 | ES=4/18
+  Round  25/50 | AvgLL=0.4457 | Val: L=0.3421 A=0.9110 P=0.8966 R=0.9129 F1=0.9029 | TrAcc=0.9506 | ES=9/18
+  Round  30/50 | AvgLL=0.4736 | Val: L=0.4494 A=0.8938 P=0.8856 R=0.9056 F1=0.8873 | TrAcc=0.9523 | ES=14/18
+  Round  34/50 | AvgLL=0.4435 | Val: L=0.4844 A=0.8904 P=0.8732 R=0.9026 F1=0.8811 | TrAcc=0.9543 | ES=18/18
+  Early stopping at round 34.
+  Best val F1: 0.9162
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedavg_mu0_sev20/fedavg_mu0_sev20_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedavg_mu0_sev20
+--- fedavg_mu0_sev20 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.84      0.76      0.80        42
+     Healthy       0.95      0.97      0.96        92
+     Measles       0.93      0.95      0.94        44
+   Monkeypox       0.91      0.92      0.91       111
+
+    accuracy                           0.92       289
+   macro avg       0.91      0.90      0.90       289
+weighted avg       0.92      0.92      0.92       289
+
+  Accuracy         : 0.9170
+  Macro-Precision  : 0.9082
+  Macro-Recall     : 0.9007
+  Macro-F1         : 0.9039
+  Weighted-F1      : 0.9160
+  AUROC (macro)    : 0.9838
+  AUROC (micro)    : 0.9875
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedavg_mu0_sev20
+
+=== Poisoning experiment: Fold_5 | severity=0.2 | defense=fedprox ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=fedavg | use_aux_loss=False | poison=(client=0, frac=0.2)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.8865 | Val: L=0.3709 A=0.8596 P=0.8434 R=0.8736 F1=0.8536 | TrAcc=0.9197 | ES=1/18
+  Round  10/50 | AvgLL=0.7255 | Val: L=0.3552 A=0.8767 P=0.8654 R=0.8927 F1=0.8708 | TrAcc=0.9340 | ES=1/18
+  Round  15/50 | AvgLL=0.6262 | Val: L=0.3600 A=0.8938 P=0.8810 R=0.9108 F1=0.8899 | TrAcc=0.9447 | ES=1/18
+  Round  20/50 | AvgLL=0.5691 | Val: L=0.2743 A=0.9110 P=0.8927 R=0.9083 F1=0.8999 | TrAcc=0.9472 | ES=1/18
+  Round  25/50 | AvgLL=0.5328 | Val: L=0.3365 A=0.8973 P=0.8920 R=0.9135 F1=0.8950 | TrAcc=0.9505 | ES=4/18
+  Round  30/50 | AvgLL=0.4759 | Val: L=0.3014 A=0.9075 P=0.8897 R=0.9135 F1=0.8989 | TrAcc=0.9521 | ES=9/18
+  Round  35/50 | AvgLL=0.4630 | Val: L=0.2933 A=0.9144 P=0.9049 R=0.9106 F1=0.9066 | TrAcc=0.9542 | ES=3/18
+  Round  40/50 | AvgLL=0.4301 | Val: L=0.2715 A=0.9212 P=0.9173 R=0.9222 F1=0.9176 | TrAcc=0.9563 | ES=0/18
+  Round  45/50 | AvgLL=0.4151 | Val: L=0.2767 A=0.9110 P=0.8929 R=0.9126 F1=0.9012 | TrAcc=0.9578 | ES=1/18
+  Round  50/50 | AvgLL=0.3687 | Val: L=0.2805 A=0.9247 P=0.9095 R=0.9282 F1=0.9179 | TrAcc=0.9584 | ES=6/18
+  Best val F1: 0.9183
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_sev20/fedprox_sev20_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_sev20
+--- fedprox_sev20 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.82      0.79      0.80        42
+     Healthy       0.95      0.96      0.95        92
+     Measles       0.95      0.95      0.95        44
+   Monkeypox       0.91      0.92      0.91       111
+
+    accuracy                           0.92       289
+   macro avg       0.91      0.90      0.91       289
+weighted avg       0.92      0.92      0.92       289
+
+  Accuracy         : 0.9170
+  Macro-Precision  : 0.9091
+  Macro-Recall     : 0.9039
+  Macro-F1         : 0.9064
+  Weighted-F1      : 0.9165
+  AUROC (macro)    : 0.9806
+  AUROC (micro)    : 0.9849
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_sev20
+
+=== Poisoning experiment: Fold_5 | severity=0.2 | defense=fedprox_trimmed ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=trimmed_mean | use_aux_loss=False | poison=(client=0, frac=0.2)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.9344 | Val: L=0.3873 A=0.8596 P=0.8318 R=0.8600 F1=0.8426 | TrAcc=0.9195 | ES=1/18
+  Round  10/50 | AvgLL=0.7102 | Val: L=0.3298 A=0.8904 P=0.8736 R=0.9080 F1=0.8855 | TrAcc=0.9377 | ES=1/18
+  Round  15/50 | AvgLL=0.6000 | Val: L=0.2901 A=0.9212 P=0.9098 R=0.9298 F1=0.9169 | TrAcc=0.9451 | ES=0/18
+  Round  20/50 | AvgLL=0.4820 | Val: L=0.3065 A=0.9075 P=0.8917 R=0.9104 F1=0.8980 | TrAcc=0.9513 | ES=5/18
+  Round  25/50 | AvgLL=0.4437 | Val: L=0.2912 A=0.9212 P=0.9099 R=0.9296 F1=0.9159 | TrAcc=0.9548 | ES=10/18
+  Round  30/50 | AvgLL=0.4086 | Val: L=0.3314 A=0.9007 P=0.8795 R=0.9019 F1=0.8880 | TrAcc=0.9569 | ES=15/18
+  Round  33/50 | AvgLL=0.4122 | Val: L=0.3010 A=0.9144 P=0.8947 R=0.9215 F1=0.9056 | TrAcc=0.9595 | ES=18/18
+  Early stopping at round 33.
+  Best val F1: 0.9169
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_trimmed_sev20/fedprox_trimmed_sev20_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_trimmed_sev20
+--- fedprox_trimmed_sev20 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.84      0.76      0.80        42
+     Healthy       0.94      0.96      0.95        92
+     Measles       0.95      0.91      0.93        44
+   Monkeypox       0.90      0.93      0.91       111
+
+    accuracy                           0.91       289
+   macro avg       0.91      0.89      0.90       289
+weighted avg       0.91      0.91      0.91       289
+
+  Accuracy         : 0.9100
+  Macro-Precision  : 0.9066
+  Macro-Recall     : 0.8889
+  Macro-F1         : 0.8970
+  Weighted-F1      : 0.9092
+  AUROC (macro)    : 0.9859
+  AUROC (micro)    : 0.9882
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_trimmed_sev20
+
+=== Poisoning experiment: Fold_5 | severity=0.4 | defense=fedavg_mu0 ===
+FedProx: 50 rounds x 3 local epochs | mu=0.0 | aggregator=fedavg | use_aux_loss=False | poison=(client=0, frac=0.4)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.9622 | Val: L=0.3002 A=0.8870 P=0.8725 R=0.8865 F1=0.8776 | TrAcc=0.8847 | ES=1/18
+  Round  10/50 | AvgLL=0.8404 | Val: L=0.2652 A=0.9144 P=0.9050 R=0.9177 F1=0.9101 | TrAcc=0.8927 | ES=0/18
+  Round  15/50 | AvgLL=0.8340 | Val: L=0.3080 A=0.9144 P=0.9021 R=0.9182 F1=0.9075 | TrAcc=0.9023 | ES=5/18
+  Round  20/50 | AvgLL=0.8278 | Val: L=0.3042 A=0.9144 P=0.8934 R=0.9239 F1=0.9059 | TrAcc=0.9039 | ES=1/18
+  Round  25/50 | AvgLL=0.8214 | Val: L=0.4061 A=0.9041 P=0.8932 R=0.9084 F1=0.8967 | TrAcc=0.9115 | ES=6/18
+  Round  30/50 | AvgLL=0.7199 | Val: L=0.3259 A=0.9212 P=0.9133 R=0.9158 F1=0.9136 | TrAcc=0.9120 | ES=4/18
+  Round  35/50 | AvgLL=0.8280 | Val: L=0.3852 A=0.9041 P=0.8985 R=0.9082 F1=0.8983 | TrAcc=0.9101 | ES=9/18
+  Round  40/50 | AvgLL=0.7884 | Val: L=0.4878 A=0.9041 P=0.8825 R=0.9013 F1=0.8903 | TrAcc=0.9158 | ES=14/18
+  Round  44/50 | AvgLL=0.7721 | Val: L=0.4699 A=0.9041 P=0.8915 R=0.9079 F1=0.8966 | TrAcc=0.9157 | ES=18/18
+  Early stopping at round 44.
+  Best val F1: 0.9158
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedavg_mu0_sev40/fedavg_mu0_sev40_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedavg_mu0_sev40
+--- fedavg_mu0_sev40 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.89      0.74      0.81        42
+     Healthy       0.97      0.95      0.96        92
+     Measles       0.84      0.98      0.91        44
+   Monkeypox       0.91      0.93      0.92       111
+
+    accuracy                           0.91       289
+   macro avg       0.90      0.90      0.90       289
+weighted avg       0.91      0.91      0.91       289
+
+  Accuracy         : 0.9135
+  Macro-Precision  : 0.9018
+  Macro-Recall     : 0.8972
+  Macro-F1         : 0.8965
+  Weighted-F1      : 0.9124
+  AUROC (macro)    : 0.9849
+  AUROC (micro)    : 0.9861
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedavg_mu0_sev40
+
+=== Poisoning experiment: Fold_5 | severity=0.4 | defense=fedprox ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=fedavg | use_aux_loss=False | poison=(client=0, frac=0.4)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=1.1579 | Val: L=0.3472 A=0.8733 P=0.8627 R=0.8871 F1=0.8689 | TrAcc=0.8699 | ES=0/18
+  Round  10/50 | AvgLL=1.0329 | Val: L=0.3536 A=0.8801 P=0.8651 R=0.8954 F1=0.8727 | TrAcc=0.8883 | ES=3/18
+  Round  15/50 | AvgLL=0.8984 | Val: L=0.3305 A=0.8973 P=0.8895 R=0.9073 F1=0.8927 | TrAcc=0.8972 | ES=0/18
+  Round  20/50 | AvgLL=0.8296 | Val: L=0.3076 A=0.9110 P=0.8997 R=0.9088 F1=0.9016 | TrAcc=0.9009 | ES=0/18
+  Round  25/50 | AvgLL=0.7748 | Val: L=0.3194 A=0.9075 P=0.8854 R=0.9068 F1=0.8936 | TrAcc=0.9076 | ES=5/18
+  Round  30/50 | AvgLL=0.7610 | Val: L=0.3225 A=0.8938 P=0.8836 R=0.8979 F1=0.8848 | TrAcc=0.9093 | ES=10/18
+  Round  35/50 | AvgLL=0.7276 | Val: L=0.3296 A=0.9007 P=0.8916 R=0.8991 F1=0.8913 | TrAcc=0.9157 | ES=15/18
+  Round  38/50 | AvgLL=0.6825 | Val: L=0.3356 A=0.9041 P=0.8919 R=0.9079 F1=0.8948 | TrAcc=0.9139 | ES=18/18
+  Early stopping at round 38.
+  Best val F1: 0.9016
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_sev40/fedprox_sev40_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_sev40
+--- fedprox_sev40 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.78      0.74      0.76        42
+     Healthy       0.96      0.95      0.95        92
+     Measles       0.93      0.91      0.92        44
+   Monkeypox       0.88      0.91      0.89       111
+
+    accuracy                           0.90       289
+   macro avg       0.88      0.88      0.88       289
+weighted avg       0.90      0.90      0.90       289
+
+  Accuracy         : 0.8962
+  Macro-Precision  : 0.8849
+  Macro-Recall     : 0.8757
+  Macro-F1         : 0.8801
+  Weighted-F1      : 0.8959
+  AUROC (macro)    : 0.9810
+  AUROC (micro)    : 0.9849
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_sev40
+
+=== Poisoning experiment: Fold_5 | severity=0.4 | defense=fedprox_trimmed ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=trimmed_mean | use_aux_loss=False | poison=(client=0, frac=0.4)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=1.1826 | Val: L=0.4063 A=0.8562 P=0.8623 R=0.8839 F1=0.8560 | TrAcc=0.8744 | ES=1/18
+  Round  10/50 | AvgLL=0.9883 | Val: L=0.3382 A=0.8836 P=0.8807 R=0.9045 F1=0.8832 | TrAcc=0.8922 | ES=1/18
+  Round  15/50 | AvgLL=0.8438 | Val: L=0.3260 A=0.8938 P=0.8864 R=0.9089 F1=0.8909 | TrAcc=0.9035 | ES=1/18
+  Round  20/50 | AvgLL=0.7446 | Val: L=0.2853 A=0.9007 P=0.8880 R=0.9088 F1=0.8933 | TrAcc=0.9116 | ES=3/18
+  Round  25/50 | AvgLL=0.7330 | Val: L=0.2823 A=0.9110 P=0.8943 R=0.9200 F1=0.9038 | TrAcc=0.9129 | ES=0/18
+  Round  30/50 | AvgLL=0.6773 | Val: L=0.2736 A=0.9075 P=0.8906 R=0.9168 F1=0.9000 | TrAcc=0.9168 | ES=4/18
+  Round  35/50 | AvgLL=0.6267 | Val: L=0.2702 A=0.9110 P=0.8902 R=0.9200 F1=0.9008 | TrAcc=0.9226 | ES=2/18
+  Round  40/50 | AvgLL=0.5849 | Val: L=0.3208 A=0.8938 P=0.8711 R=0.9051 F1=0.8822 | TrAcc=0.9232 | ES=7/18
+  Round  45/50 | AvgLL=0.5323 | Val: L=0.3205 A=0.8973 P=0.8821 R=0.8975 F1=0.8854 | TrAcc=0.9293 | ES=12/18
+  Round  50/50 | AvgLL=0.4871 | Val: L=0.3386 A=0.9007 P=0.8929 R=0.9103 F1=0.8938 | TrAcc=0.9319 | ES=17/18
+  Best val F1: 0.9087
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_trimmed_sev40/fedprox_trimmed_sev40_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_trimmed_sev40
+--- fedprox_trimmed_sev40 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.78      0.76      0.77        42
+     Healthy       0.94      0.96      0.95        92
+     Measles       0.93      0.91      0.92        44
+   Monkeypox       0.90      0.90      0.90       111
+
+    accuracy                           0.90       289
+   macro avg       0.89      0.88      0.88       289
+weighted avg       0.90      0.90      0.90       289
+
+  Accuracy         : 0.8997
+  Macro-Precision  : 0.8869
+  Macro-Recall     : 0.8821
+  Macro-F1         : 0.8844
+  Weighted-F1      : 0.8993
+  AUROC (macro)    : 0.9742
+  AUROC (micro)    : 0.9803
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_trimmed_sev40
+
+=== Poisoning experiment: Fold_5 | severity=0.6 | defense=fedavg_mu0 ===
+FedProx: 50 rounds x 3 local epochs | mu=0.0 | aggregator=fedavg | use_aux_loss=False | poison=(client=0, frac=0.6)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=1.1327 | Val: L=0.3849 A=0.8630 P=0.8416 R=0.8732 F1=0.8509 | TrAcc=0.8420 | ES=1/18
+  Round  10/50 | AvgLL=1.0688 | Val: L=0.3720 A=0.8836 P=0.8640 R=0.9009 F1=0.8759 | TrAcc=0.8562 | ES=3/18
+  Round  15/50 | AvgLL=1.0234 | Val: L=0.3597 A=0.8973 P=0.8831 R=0.8963 F1=0.8883 | TrAcc=0.8652 | ES=2/18
+  Round  20/50 | AvgLL=1.0175 | Val: L=0.3532 A=0.8938 P=0.8846 R=0.8867 F1=0.8840 | TrAcc=0.8680 | ES=7/18
+  Round  25/50 | AvgLL=1.0708 | Val: L=0.3516 A=0.9110 P=0.9020 R=0.9050 F1=0.9015 | TrAcc=0.8695 | ES=0/18
+  Round  30/50 | AvgLL=0.9676 | Val: L=0.4135 A=0.8904 P=0.8813 R=0.8926 F1=0.8830 | TrAcc=0.8763 | ES=5/18
+  Round  35/50 | AvgLL=0.9527 | Val: L=0.4204 A=0.8973 P=0.8869 R=0.8937 F1=0.8863 | TrAcc=0.8796 | ES=10/18
+  Round  40/50 | AvgLL=1.1301 | Val: L=0.4004 A=0.9007 P=0.8914 R=0.8998 F1=0.8926 | TrAcc=0.8783 | ES=15/18
+  Round  43/50 | AvgLL=0.9629 | Val: L=0.4417 A=0.8973 P=0.8865 R=0.8858 F1=0.8859 | TrAcc=0.8831 | ES=18/18
+  Early stopping at round 43.
+  Best val F1: 0.9015
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedavg_mu0_sev60/fedavg_mu0_sev60_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedavg_mu0_sev60
+--- fedavg_mu0_sev60 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.82      0.74      0.78        42
+     Healthy       0.97      0.95      0.96        92
+     Measles       0.95      0.95      0.95        44
+   Monkeypox       0.89      0.94      0.91       111
+
+    accuracy                           0.91       289
+   macro avg       0.91      0.89      0.90       289
+weighted avg       0.91      0.91      0.91       289
+
+  Accuracy         : 0.9135
+  Macro-Precision  : 0.9065
+  Macro-Recall     : 0.8938
+  Macro-F1         : 0.8995
+  Weighted-F1      : 0.9127
+  AUROC (macro)    : 0.9816
+  AUROC (micro)    : 0.9859
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedavg_mu0_sev60
+
+=== Poisoning experiment: Fold_5 | severity=0.6 | defense=fedprox ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=fedavg | use_aux_loss=False | poison=(client=0, frac=0.6)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=1.3286 | Val: L=0.4065 A=0.8562 P=0.8390 R=0.8619 F1=0.8465 | TrAcc=0.8398 | ES=0/18
+  Round  10/50 | AvgLL=1.1301 | Val: L=0.3399 A=0.8801 P=0.8645 R=0.8849 F1=0.8718 | TrAcc=0.8551 | ES=1/18
+  Round  15/50 | AvgLL=1.0694 | Val: L=0.3416 A=0.8870 P=0.8788 R=0.8968 F1=0.8825 | TrAcc=0.8623 | ES=2/18
+  Round  20/50 | AvgLL=1.0694 | Val: L=0.3111 A=0.9007 P=0.8775 R=0.9019 F1=0.8879 | TrAcc=0.8640 | ES=1/18
+  Round  25/50 | AvgLL=1.0243 | Val: L=0.3195 A=0.9041 P=0.8943 R=0.9044 F1=0.8970 | TrAcc=0.8716 | ES=0/18
+  Round  30/50 | AvgLL=0.9470 | Val: L=0.3896 A=0.8767 P=0.8596 R=0.8875 F1=0.8643 | TrAcc=0.8746 | ES=2/18
+  Round  35/50 | AvgLL=0.9458 | Val: L=0.3286 A=0.9007 P=0.8813 R=0.9095 F1=0.8908 | TrAcc=0.8763 | ES=7/18
+  Round  40/50 | AvgLL=0.9075 | Val: L=0.3568 A=0.8870 P=0.8778 R=0.8939 F1=0.8791 | TrAcc=0.8802 | ES=12/18
+  Round  45/50 | AvgLL=0.8497 | Val: L=0.3959 A=0.8801 P=0.8722 R=0.8890 F1=0.8727 | TrAcc=0.8842 | ES=17/18
+  Round  46/50 | AvgLL=0.8714 | Val: L=0.3272 A=0.8904 P=0.8730 R=0.9023 F1=0.8826 | TrAcc=0.8828 | ES=18/18
+  Early stopping at round 46.
+  Best val F1: 0.9042
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_sev60/fedprox_sev60_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_sev60
+--- fedprox_sev60 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.83      0.69      0.75        42
+     Healthy       0.96      0.95      0.95        92
+     Measles       0.91      0.93      0.92        44
+   Monkeypox       0.89      0.95      0.92       111
+
+    accuracy                           0.91       289
+   macro avg       0.90      0.88      0.89       289
+weighted avg       0.91      0.91      0.90       289
+
+  Accuracy         : 0.9066
+  Macro-Precision  : 0.8964
+  Macro-Recall     : 0.8785
+  Macro-F1         : 0.8856
+  Weighted-F1      : 0.9046
+  AUROC (macro)    : 0.9757
+  AUROC (micro)    : 0.9817
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_sev60
+
+=== Poisoning experiment: Fold_5 | severity=0.6 | defense=fedprox_trimmed ===
+FedProx: 50 rounds x 3 local epochs | mu=0.01 | aggregator=trimmed_mean | use_aux_loss=False | poison=(client=0, frac=0.6)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=1.3574 | Val: L=0.4070 A=0.8596 P=0.8383 R=0.8739 F1=0.8508 | TrAcc=0.8407 | ES=1/18
+  Round  10/50 | AvgLL=1.1196 | Val: L=0.3897 A=0.8733 P=0.8518 R=0.8868 F1=0.8643 | TrAcc=0.8599 | ES=4/18
+  Round  15/50 | AvgLL=1.0535 | Val: L=0.3936 A=0.8767 P=0.8651 R=0.8965 F1=0.8715 | TrAcc=0.8678 | ES=1/18
+  Round  20/50 | AvgLL=0.9773 | Val: L=0.3258 A=0.8938 P=0.8845 R=0.9008 F1=0.8880 | TrAcc=0.8732 | ES=6/18
+  Round  25/50 | AvgLL=0.9256 | Val: L=0.3361 A=0.8870 P=0.8685 R=0.8927 F1=0.8756 | TrAcc=0.8804 | ES=11/18
+  Round  30/50 | AvgLL=0.8427 | Val: L=0.3436 A=0.8973 P=0.8907 R=0.9066 F1=0.8919 | TrAcc=0.8861 | ES=3/18
+  Round  35/50 | AvgLL=0.8248 | Val: L=0.3559 A=0.8973 P=0.8772 R=0.9142 F1=0.8886 | TrAcc=0.8917 | ES=8/18
+  Round  40/50 | AvgLL=0.8090 | Val: L=0.3206 A=0.9110 P=0.8939 R=0.9198 F1=0.9026 | TrAcc=0.8931 | ES=0/18
+  Round  45/50 | AvgLL=0.7409 | Val: L=0.3290 A=0.8973 P=0.8842 R=0.9040 F1=0.8898 | TrAcc=0.9018 | ES=5/18
+  Round  50/50 | AvgLL=0.7541 | Val: L=0.3281 A=0.9075 P=0.8856 R=0.9137 F1=0.8966 | TrAcc=0.9004 | ES=10/18
+  Best val F1: 0.9026
+  FL-SWA checkpoint saved: pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_trimmed_sev60/fedprox_trimmed_sev60_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_trimmed_sev60
+--- fedprox_trimmed_sev60 ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.79      0.79      0.79        42
+     Healthy       0.96      0.93      0.95        92
+     Measles       0.93      0.91      0.92        44
+   Monkeypox       0.90      0.93      0.92       111
+
+    accuracy                           0.91       289
+   macro avg       0.89      0.89      0.89       289
+weighted avg       0.91      0.91      0.91       289
+
+  Accuracy         : 0.9066
+  Macro-Precision  : 0.8938
+  Macro-Recall     : 0.8894
+  Macro-F1         : 0.8915
+  Weighted-F1      : 0.9067
+  AUROC (macro)    : 0.9794
+  AUROC (micro)    : 0.9834
+  Plots saved to pipeline_v2_single_gpu/poisoning_robustness/Fold_5/fedprox_trimmed_sev60
+
+Poisoning robustness (mean +/- std across folds):
+        defense  severity  acc_mean  acc_std  f1_mean   f1_std
+     fedavg_mu0       0.0  0.930796 0.024832 0.922430 0.027729
+     fedavg_mu0       0.2  0.926644 0.014963 0.917881 0.016430
+     fedavg_mu0       0.4  0.920415 0.017127 0.909853 0.018671
+     fedavg_mu0       0.6  0.926644 0.013039 0.917616 0.015672
+        fedprox       0.0  0.919031 0.021133 0.910531 0.024692
+        fedprox       0.2  0.928028 0.018046 0.919982 0.019823
+        fedprox       0.4  0.922491 0.017745 0.913979 0.021706
+        fedprox       0.6  0.921799 0.015590 0.910306 0.019812
+fedprox_trimmed       0.0  0.923875 0.019574 0.915959 0.022530
+fedprox_trimmed       0.2  0.920415 0.014883 0.912134 0.018629
+fedprox_trimmed       0.4  0.913495 0.014475 0.905282 0.017327
+fedprox_trimmed       0.6  0.914187 0.018211 0.904153 0.019612
+Figure saved: fig_poisoning_robustness.png
+Section 9 complete.
+
+============================================================
+  FedPer: Fold_1 | FL_Run2_Heterogeneous
+============================================================
+FedPer: 50 rounds x 3 local epochs | mu=0.01
+  Backbone+attention: FEDERATED | Head: LOCAL (per-client)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.7651 | Val: L=0.9035 A=0.9110 P=0.8936 R=0.9129 F1=0.9022 | ES=0/18
+  Round  10/50 | AvgLL=0.3999 | Val: L=0.6673 A=0.9281 P=0.9109 R=0.9276 F1=0.9185 | ES=1/18
+  Round  15/50 | AvgLL=0.2980 | Val: L=0.5348 A=0.9349 P=0.9201 R=0.9326 F1=0.9259 | ES=1/18
+  Round  20/50 | AvgLL=0.2399 | Val: L=0.4515 A=0.9384 P=0.9255 R=0.9353 F1=0.9300 | ES=3/18
+  Round  25/50 | AvgLL=0.2047 | Val: L=0.4025 A=0.9418 P=0.9280 R=0.9413 F1=0.9340 | ES=0/18
+  Round  30/50 | AvgLL=0.1731 | Val: L=0.3683 A=0.9418 P=0.9298 R=0.9344 F1=0.9319 | ES=1/18
+  Round  35/50 | AvgLL=0.1623 | Val: L=0.3445 A=0.9521 P=0.9406 R=0.9480 F1=0.9441 | ES=0/18
+  Round  40/50 | AvgLL=0.1397 | Val: L=0.3311 A=0.9486 P=0.9351 R=0.9425 F1=0.9385 | ES=5/18
+  Round  45/50 | AvgLL=0.1399 | Val: L=0.3242 A=0.9418 P=0.9275 R=0.9380 F1=0.9323 | ES=10/18
+  Round  50/50 | AvgLL=0.1147 | Val: L=0.3077 A=0.9418 P=0.9321 R=0.9309 F1=0.9313 | ES=15/18
+  Best val F1: 0.9441
+  FedPer SWA checkpoint saved: pipeline_v2_single_gpu/fedper/Fold_1/fedper_Fold_1_FL_Run2_Heterogeneous_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/fedper/Fold_1
+--- fedper_Fold_1_FL_Run2_Heterogeneous ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.78      0.95      0.86        42
+     Healthy       0.99      0.97      0.98        92
+     Measles       0.98      0.93      0.95        44
+   Monkeypox       0.95      0.91      0.93       111
+
+    accuracy                           0.94       289
+   macro avg       0.93      0.94      0.93       289
+weighted avg       0.94      0.94      0.94       289
+
+  Accuracy         : 0.9377
+  Macro-Precision  : 0.9256
+  Macro-Recall     : 0.9404
+  Macro-F1         : 0.9307
+  Weighted-F1      : 0.9391
+  AUROC (macro)    : 0.9916
+  AUROC (micro)    : 0.9916
+  Plots saved to pipeline_v2_single_gpu/fedper/Fold_1
+
+============================================================
+  FedPer: Fold_2 | FL_Run2_Heterogeneous
+============================================================
+FedPer: 50 rounds x 3 local epochs | mu=0.01
+  Backbone+attention: FEDERATED | Head: LOCAL (per-client)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.8035 | Val: L=0.8488 A=0.8938 P=0.8878 R=0.9030 F1=0.8898 | ES=0/18
+  Round  10/50 | AvgLL=0.4198 | Val: L=0.6395 A=0.9178 P=0.9039 R=0.9314 F1=0.9142 | ES=2/18
+  Round  15/50 | AvgLL=0.2798 | Val: L=0.5423 A=0.9212 P=0.9063 R=0.9341 F1=0.9166 | ES=1/18
+  Round  20/50 | AvgLL=0.2349 | Val: L=0.4546 A=0.9452 P=0.9349 R=0.9488 F1=0.9414 | ES=2/18
+  Round  25/50 | AvgLL=0.1901 | Val: L=0.4220 A=0.9384 P=0.9208 R=0.9453 F1=0.9315 | ES=7/18
+  Round  30/50 | AvgLL=0.1680 | Val: L=0.3845 A=0.9384 P=0.9241 R=0.9443 F1=0.9330 | ES=12/18
+  Round  35/50 | AvgLL=0.1456 | Val: L=0.3573 A=0.9452 P=0.9280 R=0.9497 F1=0.9377 | ES=17/18
+  Round  36/50 | AvgLL=0.1443 | Val: L=0.3423 A=0.9452 P=0.9349 R=0.9452 F1=0.9398 | ES=18/18
+  Early stopping at round 36.
+  Best val F1: 0.9443
+  FedPer SWA checkpoint saved: pipeline_v2_single_gpu/fedper/Fold_2/fedper_Fold_2_FL_Run2_Heterogeneous_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/fedper/Fold_2
+--- fedper_Fold_2_FL_Run2_Heterogeneous ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.74      0.95      0.83        42
+     Healthy       0.96      0.97      0.96        92
+     Measles       0.89      0.93      0.91        44
+   Monkeypox       0.96      0.83      0.89       111
+
+    accuracy                           0.91       289
+   macro avg       0.89      0.92      0.90       289
+weighted avg       0.92      0.91      0.91       289
+
+  Accuracy         : 0.9066
+  Macro-Precision  : 0.8868
+  Macro-Recall     : 0.9201
+  Macro-F1         : 0.8989
+  Weighted-F1      : 0.9075
+  AUROC (macro)    : 0.9886
+  AUROC (micro)    : 0.9846
+  Plots saved to pipeline_v2_single_gpu/fedper/Fold_2
+
+============================================================
+  FedPer: Fold_3 | FL_Run2_Heterogeneous
+============================================================
+FedPer: 50 rounds x 3 local epochs | mu=0.01
+  Backbone+attention: FEDERATED | Head: LOCAL (per-client)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.7652 | Val: L=0.8007 A=0.9110 P=0.8962 R=0.9107 F1=0.9017 | ES=0/18
+  Round  10/50 | AvgLL=0.3886 | Val: L=0.6112 A=0.9144 P=0.9071 R=0.9206 F1=0.9112 | ES=0/18
+  Round  15/50 | AvgLL=0.2921 | Val: L=0.5115 A=0.9247 P=0.9172 R=0.9287 F1=0.9202 | ES=4/18
+  Round  20/50 | AvgLL=0.2129 | Val: L=0.4444 A=0.9281 P=0.9201 R=0.9269 F1=0.9224 | ES=9/18
+  Round  25/50 | AvgLL=0.2077 | Val: L=0.4022 A=0.9281 P=0.9196 R=0.9235 F1=0.9213 | ES=4/18
+  Round  30/50 | AvgLL=0.1725 | Val: L=0.3839 A=0.9247 P=0.9138 R=0.9177 F1=0.9156 | ES=9/18
+  Round  35/50 | AvgLL=0.1548 | Val: L=0.3589 A=0.9212 P=0.9092 R=0.9122 F1=0.9104 | ES=4/18
+  Round  40/50 | AvgLL=0.1284 | Val: L=0.3358 A=0.9212 P=0.9092 R=0.9083 F1=0.9086 | ES=9/18
+  Round  45/50 | AvgLL=0.1387 | Val: L=0.3174 A=0.9315 P=0.9190 R=0.9262 F1=0.9224 | ES=1/18
+  Round  50/50 | AvgLL=0.1097 | Val: L=0.3044 A=0.9281 P=0.9138 R=0.9235 F1=0.9184 | ES=4/18
+  Best val F1: 0.9376
+  FedPer SWA checkpoint saved: pipeline_v2_single_gpu/fedper/Fold_3/fedper_Fold_3_FL_Run2_Heterogeneous_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/fedper/Fold_3
+--- fedper_Fold_3_FL_Run2_Heterogeneous ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.74      0.88      0.80        42
+     Healthy       0.99      0.96      0.97        92
+     Measles       0.98      0.98      0.98        44
+   Monkeypox       0.92      0.88      0.90       111
+
+    accuracy                           0.92       289
+   macro avg       0.91      0.92      0.91       289
+weighted avg       0.93      0.92      0.92       289
+
+  Accuracy         : 0.9204
+  Macro-Precision  : 0.9076
+  Macro-Recall     : 0.9244
+  Macro-F1         : 0.9143
+  Weighted-F1      : 0.9221
+  AUROC (macro)    : 0.9879
+  AUROC (micro)    : 0.9905
+  Plots saved to pipeline_v2_single_gpu/fedper/Fold_3
+
+============================================================
+  FedPer: Fold_4 | FL_Run2_Heterogeneous
+============================================================
+FedPer: 50 rounds x 3 local epochs | mu=0.01
+  Backbone+attention: FEDERATED | Head: LOCAL (per-client)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.7524 | Val: L=0.7938 A=0.8904 P=0.8834 R=0.8983 F1=0.8859 | ES=0/18
+  Round  10/50 | AvgLL=0.4041 | Val: L=0.5730 A=0.9212 P=0.9121 R=0.9219 F1=0.9152 | ES=0/18
+  Round  15/50 | AvgLL=0.2804 | Val: L=0.4777 A=0.9315 P=0.9235 R=0.9299 F1=0.9254 | ES=0/18
+  Round  20/50 | AvgLL=0.2239 | Val: L=0.4084 A=0.9315 P=0.9164 R=0.9389 F1=0.9262 | ES=2/18
+  Round  25/50 | AvgLL=0.2184 | Val: L=0.3762 A=0.9349 P=0.9259 R=0.9318 F1=0.9281 | ES=2/18
+  Round  30/50 | AvgLL=0.1562 | Val: L=0.3389 A=0.9315 P=0.9169 R=0.9358 F1=0.9255 | ES=3/18
+  Round  35/50 | AvgLL=0.1541 | Val: L=0.3158 A=0.9281 P=0.9179 R=0.9361 F1=0.9262 | ES=8/18
+  Round  40/50 | AvgLL=0.1155 | Val: L=0.3193 A=0.9315 P=0.9130 R=0.9396 F1=0.9245 | ES=13/18
+  Round  45/50 | AvgLL=0.1347 | Val: L=0.3209 A=0.9281 P=0.9142 R=0.9350 F1=0.9217 | ES=18/18
+  Early stopping at round 45.
+  Best val F1: 0.9484
+  FedPer SWA checkpoint saved: pipeline_v2_single_gpu/fedper/Fold_4/fedper_Fold_4_FL_Run2_Heterogeneous_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/fedper/Fold_4
+--- fedper_Fold_4_FL_Run2_Heterogeneous ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.70      0.95      0.81        42
+     Healthy       0.99      0.96      0.97        92
+     Measles       0.96      0.98      0.97        44
+   Monkeypox       0.94      0.83      0.88       111
+
+    accuracy                           0.91       289
+   macro avg       0.90      0.93      0.91       289
+weighted avg       0.92      0.91      0.91       289
+
+  Accuracy         : 0.9100
+  Macro-Precision  : 0.8962
+  Macro-Recall     : 0.9288
+  Macro-F1         : 0.9068
+  Weighted-F1      : 0.9122
+  AUROC (macro)    : 0.9887
+  AUROC (micro)    : 0.9764
+  Plots saved to pipeline_v2_single_gpu/fedper/Fold_4
+
+============================================================
+  FedPer: Fold_5 | FL_Run2_Heterogeneous
+============================================================
+FedPer: 50 rounds x 3 local epochs | mu=0.01
+  Backbone+attention: FEDERATED | Head: LOCAL (per-client)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | AvgLL=0.6845 | Val: L=0.8870 A=0.8904 P=0.8749 R=0.8932 F1=0.8819 | ES=0/18
+  Round  10/50 | AvgLL=0.3910 | Val: L=0.6895 A=0.8870 P=0.8755 R=0.8922 F1=0.8800 | ES=1/18
+  Round  15/50 | AvgLL=0.2607 | Val: L=0.5760 A=0.9007 P=0.8871 R=0.9083 F1=0.8947 | ES=6/18
+  Round  20/50 | AvgLL=0.2416 | Val: L=0.4976 A=0.9075 P=0.8912 R=0.9168 F1=0.9007 | ES=1/18
+  Round  25/50 | AvgLL=0.1717 | Val: L=0.4471 A=0.9144 P=0.9092 R=0.9215 F1=0.9126 | ES=0/18
+  Round  30/50 | AvgLL=0.1605 | Val: L=0.4238 A=0.9041 P=0.8989 R=0.9113 F1=0.9022 | ES=1/18
+  Round  35/50 | AvgLL=0.1474 | Val: L=0.3959 A=0.9144 P=0.9043 R=0.9249 F1=0.9115 | ES=4/18
+  Round  40/50 | AvgLL=0.1382 | Val: L=0.3804 A=0.9110 P=0.9008 R=0.9193 F1=0.9064 | ES=9/18
+  Round  45/50 | AvgLL=0.1468 | Val: L=0.3530 A=0.9178 P=0.9090 R=0.9240 F1=0.9138 | ES=14/18
+  Round  49/50 | AvgLL=0.1176 | Val: L=0.3511 A=0.9144 P=0.9029 R=0.9253 F1=0.9103 | ES=18/18
+  Early stopping at round 49.
+  Best val F1: 0.9166
+  FedPer SWA checkpoint saved: pipeline_v2_single_gpu/fedper/Fold_5/fedper_Fold_5_FL_Run2_Heterogeneous_swa.pt
+  FL curves saved to pipeline_v2_single_gpu/fedper/Fold_5
+--- fedper_Fold_5_FL_Run2_Heterogeneous ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.80      0.79      0.80        42
+     Healthy       0.94      0.96      0.95        92
+     Measles       0.91      0.91      0.91        44
+   Monkeypox       0.92      0.91      0.91       111
+
+    accuracy                           0.91       289
+   macro avg       0.89      0.89      0.89       289
+weighted avg       0.91      0.91      0.91       289
+
+  Accuracy         : 0.9066
+  Macro-Precision  : 0.8921
+  Macro-Recall     : 0.8903
+  Macro-F1         : 0.8911
+  Weighted-F1      : 0.9063
+  AUROC (macro)    : 0.9793
+  AUROC (micro)    : 0.9795
+  Plots saved to pipeline_v2_single_gpu/fedper/Fold_5
+
+Table 8 -- FedPer vs FedProx (Run2 Non-IID):
+  Fold  FedProx_Acc  FedPer_Acc  FedProx_F1  FedPer_F1  FedProx_AUROC  FedPer_AUROC
+Fold_1     0.944637    0.937716    0.938500   0.930650       0.991270      0.991594
+Fold_2     0.934256    0.906574    0.928483   0.898874       0.987590      0.988614
+Fold_3     0.923875    0.920415    0.914261   0.914306       0.977497      0.987938
+Fold_4     0.896194    0.910035    0.889072   0.906783       0.986337      0.988655
+Fold_5     0.903114    0.906574    0.882710   0.891134       0.986081      0.979345
+Section 9a complete.
+
+============================================================
+  DP-SGD: Fold_1 | eps_target=None
+============================================================
+DP-SGD FL: 50 rounds x 3 local epochs | No-DP
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | LL=0.2332 | A=0.9212 F1=0.9116 | eps=inf | ES=0/18
+  Round  10/50 | LL=0.1141 | A=0.9178 F1=0.9100 | eps=inf | ES=4/18
+  Round  15/50 | LL=0.0848 | A=0.9349 F1=0.9257 | eps=inf | ES=0/18
+  Round  20/50 | LL=0.0658 | A=0.9349 F1=0.9250 | eps=inf | ES=1/18
+  Round  25/50 | LL=0.0710 | A=0.9349 F1=0.9252 | eps=inf | ES=6/18
+  Round  30/50 | LL=0.0694 | A=0.9384 F1=0.9310 | eps=inf | ES=11/18
+  Round  35/50 | LL=0.0487 | A=0.9384 F1=0.9303 | eps=inf | ES=16/18
+  Round  37/50 | LL=0.0598 | A=0.9452 F1=0.9354 | eps=inf | ES=18/18
+  Early stopping at round 37.
+  Best val F1: 0.9362
+  FL curves saved to pipeline_v2_single_gpu/dp_sgd/Fold_1/noDP
+--- dp_Fold_1_noDP ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.84      0.98      0.90        42
+     Healthy       0.97      0.98      0.97        92
+     Measles       0.98      0.95      0.97        44
+   Monkeypox       0.98      0.92      0.95       111
+
+    accuracy                           0.95       289
+   macro avg       0.94      0.96      0.95       289
+weighted avg       0.96      0.95      0.95       289
+
+  Accuracy         : 0.9516
+  Macro-Precision  : 0.9405
+  Macro-Recall     : 0.9570
+  Macro-F1         : 0.9471
+  Weighted-F1      : 0.9521
+  AUROC (macro)    : 0.9927
+  AUROC (micro)    : 0.9916
+  Plots saved to pipeline_v2_single_gpu/dp_sgd/Fold_1/noDP
+
+============================================================
+  DP-SGD: Fold_1 | eps_target=12.0
+============================================================
+DP-SGD FL: 50 rounds x 3 local epochs | DP(eps=12.0)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+ERROR: 'list' object has no attribute 'detach'
+Traceback (most recent call last):
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2356, in <module>
+    gm, hist, swa = train_fedprox_dp(
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2292, in train_fedprox_dp
+    lm, ll, eps, la = _dp_local_update(gm, tr_loaders[ci], focal_loss,
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2216, in _dp_local_update
+    out = local_model(imgs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 549, in forward
+    return self._module(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 413, in forward
+    main = self.head([s1, s2, s3])
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1879, in _call_impl
+    return inner()
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1840, in inner
+    hook_result = hook(self, args, result)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 286, in capture_activations_hook
+    module.activations.append([t.detach() for t in forward_input])  # pyre-ignore
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 286, in <listcomp>
+    module.activations.append([t.detach() for t in forward_input])  # pyre-ignore
+AttributeError: 'list' object has no attribute 'detach'
+
+============================================================
+  DP-SGD: Fold_1 | eps_target=8.0
+============================================================
+DP-SGD FL: 50 rounds x 3 local epochs | DP(eps=8.0)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+ERROR: 'list' object has no attribute 'detach'
+Traceback (most recent call last):
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2356, in <module>
+    gm, hist, swa = train_fedprox_dp(
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2292, in train_fedprox_dp
+    lm, ll, eps, la = _dp_local_update(gm, tr_loaders[ci], focal_loss,
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2216, in _dp_local_update
+    out = local_model(imgs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 549, in forward
+    return self._module(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 413, in forward
+    main = self.head([s1, s2, s3])
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1879, in _call_impl
+    return inner()
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1840, in inner
+    hook_result = hook(self, args, result)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 286, in capture_activations_hook
+    module.activations.append([t.detach() for t in forward_input])  # pyre-ignore
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 286, in <listcomp>
+    module.activations.append([t.detach() for t in forward_input])  # pyre-ignore
+AttributeError: 'list' object has no attribute 'detach'
+
+============================================================
+  DP-SGD: Fold_3 | eps_target=None
+============================================================
+DP-SGD FL: 50 rounds x 3 local epochs | No-DP
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | LL=0.2330 | A=0.9178 F1=0.9103 | eps=inf | ES=0/18
+  Round  10/50 | LL=0.1187 | A=0.9212 F1=0.9129 | eps=inf | ES=1/18
+  Round  15/50 | LL=0.0759 | A=0.9315 F1=0.9236 | eps=inf | ES=1/18
+  Round  20/50 | LL=0.0780 | A=0.9281 F1=0.9199 | eps=inf | ES=3/18
+  Round  25/50 | LL=0.0650 | A=0.9144 F1=0.9038 | eps=inf | ES=8/18
+  Round  30/50 | LL=0.0664 | A=0.9315 F1=0.9271 | eps=inf | ES=2/18
+  Round  35/50 | LL=0.0522 | A=0.9452 F1=0.9386 | eps=inf | ES=0/18
+  Round  40/50 | LL=0.0574 | A=0.9349 F1=0.9256 | eps=inf | ES=5/18
+  Round  45/50 | LL=0.0518 | A=0.9418 F1=0.9349 | eps=inf | ES=10/18
+  Round  50/50 | LL=0.0290 | A=0.9418 F1=0.9325 | eps=inf | ES=15/18
+  Best val F1: 0.9386
+  FL curves saved to pipeline_v2_single_gpu/dp_sgd/Fold_3/noDP
+--- dp_Fold_3_noDP ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.80      0.86      0.83        42
+     Healthy       0.98      0.97      0.97        92
+     Measles       0.98      0.93      0.95        44
+   Monkeypox       0.93      0.93      0.93       111
+
+    accuracy                           0.93       289
+   macro avg       0.92      0.92      0.92       289
+weighted avg       0.93      0.93      0.93       289
+
+  Accuracy         : 0.9308
+  Macro-Precision  : 0.9205
+  Macro-Recall     : 0.9211
+  Macro-F1         : 0.9204
+  Weighted-F1      : 0.9315
+  AUROC (macro)    : 0.9881
+  AUROC (micro)    : 0.9914
+  Plots saved to pipeline_v2_single_gpu/dp_sgd/Fold_3/noDP
+
+============================================================
+  DP-SGD: Fold_3 | eps_target=12.0
+============================================================
+DP-SGD FL: 50 rounds x 3 local epochs | DP(eps=12.0)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+ERROR: 'list' object has no attribute 'detach'
+Traceback (most recent call last):
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2356, in <module>
+    gm, hist, swa = train_fedprox_dp(
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2292, in train_fedprox_dp
+    lm, ll, eps, la = _dp_local_update(gm, tr_loaders[ci], focal_loss,
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2216, in _dp_local_update
+    out = local_model(imgs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 549, in forward
+    return self._module(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 413, in forward
+    main = self.head([s1, s2, s3])
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1879, in _call_impl
+    return inner()
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1840, in inner
+    hook_result = hook(self, args, result)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 286, in capture_activations_hook
+    module.activations.append([t.detach() for t in forward_input])  # pyre-ignore
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 286, in <listcomp>
+    module.activations.append([t.detach() for t in forward_input])  # pyre-ignore
+AttributeError: 'list' object has no attribute 'detach'
+
+============================================================
+  DP-SGD: Fold_3 | eps_target=8.0
+============================================================
+DP-SGD FL: 50 rounds x 3 local epochs | DP(eps=8.0)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+ERROR: 'list' object has no attribute 'detach'
+Traceback (most recent call last):
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2356, in <module>
+    gm, hist, swa = train_fedprox_dp(
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2292, in train_fedprox_dp
+    lm, ll, eps, la = _dp_local_update(gm, tr_loaders[ci], focal_loss,
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2216, in _dp_local_update
+    out = local_model(imgs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 549, in forward
+    return self._module(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 413, in forward
+    main = self.head([s1, s2, s3])
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1879, in _call_impl
+    return inner()
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1840, in inner
+    hook_result = hook(self, args, result)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 286, in capture_activations_hook
+    module.activations.append([t.detach() for t in forward_input])  # pyre-ignore
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 286, in <listcomp>
+    module.activations.append([t.detach() for t in forward_input])  # pyre-ignore
+AttributeError: 'list' object has no attribute 'detach'
+
+============================================================
+  DP-SGD: Fold_5 | eps_target=None
+============================================================
+DP-SGD FL: 50 rounds x 3 local epochs | No-DP
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+  Round   5/50 | LL=0.2523 | A=0.9007 F1=0.8990 | eps=inf | ES=0/18
+  Round  10/50 | LL=0.1355 | A=0.8938 F1=0.8893 | eps=inf | ES=4/18
+  Round  15/50 | LL=0.0908 | A=0.9075 F1=0.9027 | eps=inf | ES=4/18
+  Round  20/50 | LL=0.0815 | A=0.9144 F1=0.9095 | eps=inf | ES=3/18
+  Round  25/50 | LL=0.0507 | A=0.9384 F1=0.9338 | eps=inf | ES=0/18
+  Round  30/50 | LL=0.0453 | A=0.9247 F1=0.9134 | eps=inf | ES=5/18
+  Round  35/50 | LL=0.0484 | A=0.9384 F1=0.9314 | eps=inf | ES=10/18
+  Round  40/50 | LL=0.0391 | A=0.9144 F1=0.9060 | eps=inf | ES=15/18
+  Round  43/50 | LL=0.0447 | A=0.9144 F1=0.9087 | eps=inf | ES=18/18
+  Early stopping at round 43.
+  Best val F1: 0.9338
+  FL curves saved to pipeline_v2_single_gpu/dp_sgd/Fold_5/noDP
+--- dp_Fold_5_noDP ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.81      0.71      0.76        42
+     Healthy       0.96      0.97      0.96        92
+     Measles       0.95      0.95      0.95        44
+   Monkeypox       0.90      0.93      0.91       111
+
+    accuracy                           0.91       289
+   macro avg       0.90      0.89      0.90       289
+weighted avg       0.91      0.91      0.91       289
+
+  Accuracy         : 0.9135
+  Macro-Precision  : 0.9045
+  Macro-Recall     : 0.8910
+  Macro-F1         : 0.8969
+  Weighted-F1      : 0.9121
+  AUROC (macro)    : 0.9815
+  AUROC (micro)    : 0.9877
+  Plots saved to pipeline_v2_single_gpu/dp_sgd/Fold_5/noDP
+
+============================================================
+  DP-SGD: Fold_5 | eps_target=12.0
+============================================================
+DP-SGD FL: 50 rounds x 3 local epochs | DP(eps=12.0)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+ERROR: 'list' object has no attribute 'detach'
+Traceback (most recent call last):
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2356, in <module>
+    gm, hist, swa = train_fedprox_dp(
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2292, in train_fedprox_dp
+    lm, ll, eps, la = _dp_local_update(gm, tr_loaders[ci], focal_loss,
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2216, in _dp_local_update
+    out = local_model(imgs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 549, in forward
+    return self._module(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 413, in forward
+    main = self.head([s1, s2, s3])
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1879, in _call_impl
+    return inner()
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1840, in inner
+    hook_result = hook(self, args, result)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 286, in capture_activations_hook
+    module.activations.append([t.detach() for t in forward_input])  # pyre-ignore
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 286, in <listcomp>
+    module.activations.append([t.detach() for t in forward_input])  # pyre-ignore
+AttributeError: 'list' object has no attribute 'detach'
+
+============================================================
+  DP-SGD: Fold_5 | eps_target=8.0
+============================================================
+DP-SGD FL: 50 rounds x 3 local epochs | DP(eps=8.0)
+Client train sizes: [748, 1124, 2248, 1872, 1500]
+ERROR: 'list' object has no attribute 'detach'
+Traceback (most recent call last):
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2356, in <module>
+    gm, hist, swa = train_fedprox_dp(
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2292, in train_fedprox_dp
+    lm, ll, eps, la = _dp_local_update(gm, tr_loaders[ci], focal_loss,
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 2216, in _dp_local_update
+    out = local_model(imgs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 549, in forward
+    return self._module(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_clean_a100.py", line 413, in forward
+    main = self.head([s1, s2, s3])
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1879, in _call_impl
+    return inner()
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1840, in inner
+    hook_result = hook(self, args, result)
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 286, in capture_activations_hook
+    module.activations.append([t.detach() for t in forward_input])  # pyre-ignore
+  File "/home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/env/lib64/python3.9/site-packages/opacus/grad_sample/grad_sample_module.py", line 286, in <listcomp>
+    module.activations.append([t.detach() for t in forward_input])  # pyre-ignore
+AttributeError: 'list' object has no attribute 'detach'
+
+Table 9 -- DP-SGD Privacy-Utility Tradeoff:
+  Fold Epsilon_Target  Accuracy  Macro_F1    AUROC
+Fold_1            inf  0.951557  0.947107 0.992672
+Fold_3            inf  0.930796  0.920420 0.988121
+Fold_5            inf  0.913495  0.896926 0.981485
+Figure saved: fig_dp_tradeoff.png
+Section 9b complete.
+[skip -- already done] EfficientNetV2-S / Fold_1_FL_Run1_Uniform
+[skip -- already done] EfficientNetV2-S / Fold_2_FL_Run1_Uniform
+[skip -- already done] EfficientNetV2-S / Fold_3_FL_Run1_Uniform
+[skip -- already done] EfficientNetV2-S / Fold_4_FL_Run1_Uniform
+[skip -- already done] EfficientNetV2-S / Fold_5_FL_Run1_Uniform
+[skip -- already done] EfficientNetV2-S / Fold_1_FL_Run2_Heterogeneous
+[skip -- already done] EfficientNetV2-S / Fold_2_FL_Run2_Heterogeneous
+[skip -- already done] EfficientNetV2-S / Fold_3_FL_Run2_Heterogeneous
+[skip -- already done] EfficientNetV2-S / Fold_4_FL_Run2_Heterogeneous
+[skip -- already done] EfficientNetV2-S / Fold_5_FL_Run2_Heterogeneous
+[skip -- already done] MobileNetV2 / Fold_1_FL_Run1_Uniform
+[skip -- already done] MobileNetV2 / Fold_2_FL_Run1_Uniform
+[skip -- already done] MobileNetV2 / Fold_3_FL_Run1_Uniform
+[skip -- already done] MobileNetV2 / Fold_4_FL_Run1_Uniform
+[skip -- already done] MobileNetV2 / Fold_5_FL_Run1_Uniform
+[skip -- already done] MobileNetV2 / Fold_1_FL_Run2_Heterogeneous
+[skip -- already done] MobileNetV2 / Fold_2_FL_Run2_Heterogeneous
+[skip -- already done] MobileNetV2 / Fold_3_FL_Run2_Heterogeneous
+[skip -- already done] MobileNetV2 / Fold_4_FL_Run2_Heterogeneous
+[skip -- already done] MobileNetV2 / Fold_5_FL_Run2_Heterogeneous
+[skip -- already done] ConvNeXtV2-Tiny / Fold_1_FL_Run1_Uniform
+[skip -- already done] ConvNeXtV2-Tiny / Fold_2_FL_Run1_Uniform
+[skip -- already done] ConvNeXtV2-Tiny / Fold_3_FL_Run1_Uniform
+[skip -- already done] ConvNeXtV2-Tiny / Fold_4_FL_Run1_Uniform
+[skip -- already done] ConvNeXtV2-Tiny / Fold_5_FL_Run1_Uniform
+[skip -- already done] ConvNeXtV2-Tiny / Fold_1_FL_Run2_Heterogeneous
+[skip -- already done] ConvNeXtV2-Tiny / Fold_2_FL_Run2_Heterogeneous
+[skip -- already done] ConvNeXtV2-Tiny / Fold_3_FL_Run2_Heterogeneous
+[skip -- already done] ConvNeXtV2-Tiny / Fold_4_FL_Run2_Heterogeneous
+[skip -- already done] ConvNeXtV2-Tiny / Fold_5_FL_Run2_Heterogeneous
+[skip -- already done] ResNet50 / Fold_1_FL_Run1_Uniform
+[skip -- already done] ResNet50 / Fold_2_FL_Run1_Uniform
+[skip -- already done] ResNet50 / Fold_3_FL_Run1_Uniform
+[skip -- already done] ResNet50 / Fold_4_FL_Run1_Uniform
+[skip -- already done] ResNet50 / Fold_5_FL_Run1_Uniform
+[skip -- already done] ResNet50 / Fold_1_FL_Run2_Heterogeneous
+[skip -- already done] ResNet50 / Fold_2_FL_Run2_Heterogeneous
+[skip -- already done] ResNet50 / Fold_3_FL_Run2_Heterogeneous
+[skip -- already done] ResNet50 / Fold_4_FL_Run2_Heterogeneous
+[skip -- already done] ResNet50 / Fold_5_FL_Run2_Heterogeneous
+
+Table 2 -- Baseline Comparison:
+           Model                   Run     Setting  Acc_mean  Acc_std  F1_mean   F1_std  AUROC_mean
+EfficientNetV2-S       FL_Run1_Uniform centralized  0.922491 0.014615 0.914374 0.018810    0.979432
+EfficientNetV2-S       FL_Run1_Uniform          fl  0.915571 0.019889 0.906843 0.022901    0.989400
+EfficientNetV2-S FL_Run2_Heterogeneous centralized  0.914187 0.022253 0.902245 0.026891    0.978541
+EfficientNetV2-S FL_Run2_Heterogeneous          fl  0.914187 0.010586 0.905283 0.010966    0.989172
+     MobileNetV2       FL_Run1_Uniform centralized  0.907958 0.020009 0.898003 0.022602    0.978807
+     MobileNetV2       FL_Run1_Uniform          fl  0.907958 0.014939 0.898210 0.016634    0.985170
+     MobileNetV2 FL_Run2_Heterogeneous centralized  0.898962 0.008011 0.889027 0.009152    0.983619
+     MobileNetV2 FL_Run2_Heterogeneous          fl  0.900346 0.005536 0.891492 0.004491    0.984531
+ ConvNeXtV2-Tiny       FL_Run1_Uniform centralized  0.915571 0.013944 0.906394 0.019144    0.976996
+ ConvNeXtV2-Tiny       FL_Run1_Uniform          fl  0.930104 0.010358 0.921713 0.012881    0.988096
+ ConvNeXtV2-Tiny FL_Run2_Heterogeneous centralized  0.910035 0.019203 0.900475 0.024933    0.975276
+ ConvNeXtV2-Tiny FL_Run2_Heterogeneous          fl  0.918339 0.017859 0.908481 0.021296    0.987878
+        ResNet50       FL_Run1_Uniform centralized  0.912111 0.011287 0.903591 0.013363    0.981049
+        ResNet50       FL_Run1_Uniform          fl  0.910035 0.014680 0.902149 0.017609    0.983769
+        ResNet50 FL_Run2_Heterogeneous centralized  0.905190 0.028247 0.894221 0.031803    0.976426
+        ResNet50 FL_Run2_Heterogeneous          fl  0.914879 0.012685 0.907565 0.016002    0.986123
+Section 10 complete.
+
+--- External Validation [uncorrected] ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.77      0.93      0.84       187
+     Measles       1.00      0.95      0.98       200
+   Monkeypox       0.89      0.75      0.81       183
+
+    accuracy                           0.88       570
+   macro avg       0.89      0.88      0.88       570
+weighted avg       0.89      0.88      0.88       570
+
+  Accuracy: 0.8807  (95% CI: 0.8515-0.9048, n=570)
+  Macro-F1: 0.8782
+
+--- External Validation [prior_corrected] ---
+              precision    recall  f1-score   support
+
+  Chickenpox       0.80      0.90      0.85       187
+     Measles       1.00      0.95      0.98       200
+   Monkeypox       0.86      0.80      0.83       183
+
+    accuracy                           0.89       570
+   macro avg       0.89      0.89      0.89       570
+weighted avg       0.89      0.89      0.89       570
+
+  Accuracy: 0.8877  (95% CI: 0.8592-0.9111, n=570)
+  Macro-F1: 0.8861
+
+Table 6 saved: table6_external_validation.csv
+Section 11 complete.
+
+--- Calibration: FL_Run1_Uniform / Fold_1 ---
+Loaders from datasets/final_5_fold_pruned/Fold_1/FL_Run1_Uniform: Train=7500 Valid=292 Test=289
+  Uncalibrated: ECE=0.0298 | Brier=0.0693 | NLL=0.1728
+  Calibrated temperature: 1.5147
+  Calibrated:   ECE=0.0449 | Brier=0.0696 | NLL=0.1697
+
+--- Calibration: FL_Run1_Uniform / Fold_2 ---
+Loaders from datasets/final_5_fold_pruned/Fold_2/FL_Run1_Uniform: Train=7500 Valid=292 Test=289
+  Uncalibrated: ECE=0.0419 | Brier=0.0895 | NLL=0.1927
+  Calibrated temperature: 1.4099
+  Calibrated:   ECE=0.0316 | Brier=0.0873 | NLL=0.1875
+
+--- Calibration: FL_Run1_Uniform / Fold_3 ---
+Loaders from datasets/final_5_fold_pruned/Fold_3/FL_Run1_Uniform: Train=7500 Valid=292 Test=289
+  Uncalibrated: ECE=0.0493 | Brier=0.1386 | NLL=0.2909
+  Calibrated temperature: 1.3733
+  Calibrated:   ECE=0.0272 | Brier=0.1317 | NLL=0.2654
+
+--- Calibration: FL_Run1_Uniform / Fold_4 ---
+Loaders from datasets/final_5_fold_pruned/Fold_4/FL_Run1_Uniform: Train=7500 Valid=292 Test=289
+  Uncalibrated: ECE=0.0609 | Brier=0.1282 | NLL=0.2929
+  Calibrated temperature: 1.3367
+  Calibrated:   ECE=0.0287 | Brier=0.1215 | NLL=0.2543
+
+--- Calibration: FL_Run1_Uniform / Fold_5 ---
+Loaders from datasets/final_5_fold_pruned/Fold_5/FL_Run1_Uniform: Train=7500 Valid=292 Test=289
+  Uncalibrated: ECE=0.0572 | Brier=0.1310 | NLL=0.2765
+  Calibrated temperature: 1.4304
+  Calibrated:   ECE=0.0497 | Brier=0.1231 | NLL=0.2463
+
+--- Calibration: FL_Run2_Heterogeneous / Fold_1 ---
+Loaders from datasets/final_5_fold_pruned/Fold_1/FL_Run2_Heterogeneous: Train=7492 Valid=292 Test=289
+  Uncalibrated: ECE=0.0305 | Brier=0.0827 | NLL=0.1966
+  Calibrated temperature: 1.5000
+  Calibrated:   ECE=0.0365 | Brier=0.0806 | NLL=0.1817
+
+--- Calibration: FL_Run2_Heterogeneous / Fold_2 ---
+Loaders from datasets/final_5_fold_pruned/Fold_2/FL_Run2_Heterogeneous: Train=7492 Valid=292 Test=289
+  Uncalibrated: ECE=0.0278 | Brier=0.0960 | NLL=0.2050
+  Calibrated temperature: 1.4156
+  Calibrated:   ECE=0.0268 | Brier=0.0942 | NLL=0.1978
+
+--- Calibration: FL_Run2_Heterogeneous / Fold_3 ---
+Loaders from datasets/final_5_fold_pruned/Fold_3/FL_Run2_Heterogeneous: Train=7492 Valid=292 Test=289
+  Uncalibrated: ECE=0.0515 | Brier=0.1261 | NLL=0.2940
+  Calibrated temperature: 1.4296
+  Calibrated:   ECE=0.0185 | Brier=0.1218 | NLL=0.2592
+
+--- Calibration: FL_Run2_Heterogeneous / Fold_4 ---
+Loaders from datasets/final_5_fold_pruned/Fold_4/FL_Run2_Heterogeneous: Train=7492 Valid=292 Test=289
+  Uncalibrated: ECE=0.0691 | Brier=0.1548 | NLL=0.3104
+  Calibrated temperature: 1.3483
+  Calibrated:   ECE=0.0483 | Brier=0.1444 | NLL=0.2700
+
+--- Calibration: FL_Run2_Heterogeneous / Fold_5 ---
+Loaders from datasets/final_5_fold_pruned/Fold_5/FL_Run2_Heterogeneous: Train=7492 Valid=292 Test=289
+  Uncalibrated: ECE=0.0579 | Brier=0.1462 | NLL=0.2825
+  Calibrated temperature: 1.4573
+  Calibrated:   ECE=0.0486 | Brier=0.1355 | NLL=0.2549
+
+Table 7 -- Calibration Metrics (Uncalibrated vs Temperature-Scaled):
+                  Run   Fold  ECE_uncal  ECE_cal  MCE_uncal  MCE_cal  Brier_uncal  Brier_cal  NLL_uncal  NLL_cal  Temperature
+      FL_Run1_Uniform Fold_1   0.029839 0.044946   0.426387 0.441451     0.069279   0.069604   0.172780 0.169701     1.514736
+      FL_Run1_Uniform Fold_2   0.041935 0.031571   0.369088 0.509916     0.089514   0.087333   0.192697 0.187517     1.409914
+      FL_Run1_Uniform Fold_3   0.049274 0.027159   0.435957 0.561423     0.138569   0.131704   0.290902 0.265408     1.373346
+      FL_Run1_Uniform Fold_4   0.060857 0.028717   0.725045 0.518577     0.128200   0.121478   0.292929 0.254282     1.336663
+      FL_Run1_Uniform Fold_5   0.057206 0.049736   0.609881 0.796694     0.130966   0.123126   0.276454 0.246278     1.430402
+FL_Run2_Heterogeneous Fold_1   0.030466 0.036529   0.507202 0.500271     0.082699   0.080567   0.196645 0.181673     1.500003
+FL_Run2_Heterogeneous Fold_2   0.027847 0.026822   0.452840 0.423768     0.095982   0.094248   0.205023 0.197754     1.415575
+FL_Run2_Heterogeneous Fold_3   0.051521 0.018516   0.544711 0.504039     0.126130   0.121832   0.293983 0.259179     1.429622
+FL_Run2_Heterogeneous Fold_4   0.069068 0.048264   0.617840 0.565733     0.154808   0.144448   0.310379 0.269994     1.348257
+FL_Run2_Heterogeneous Fold_5   0.057870 0.048567   0.502404 0.427470     0.146182   0.135457   0.282488 0.254902     1.457257
+Figure saved: fig_reliability_diagram.png
+Section 11a complete.
+GradCAM++ available.
+Patched timm's ConvNeXtStage for indexing.
+Best fold for GradCAM++: Fold_1 (loading pipeline_v2_single_gpu/Fold_1/FL_Run1_Uniform/fl/Fold_1_FL_Run1_Uniform_fl_best.pt, architecture=msaf_primary)
+  Saved: pipeline_v2_single_gpu/gradcam/gradcam_Chickenpox_correct.png
+  Saved: pipeline_v2_single_gpu/gradcam/gradcam_Chickenpox_wrong.png
+  Saved: pipeline_v2_single_gpu/gradcam/gradcam_Healthy_correct.png
+  Saved: pipeline_v2_single_gpu/gradcam/gradcam_Healthy_wrong.png
+  Saved: pipeline_v2_single_gpu/gradcam/gradcam_Measles_correct.png
+  Saved: pipeline_v2_single_gpu/gradcam/gradcam_Measles_wrong.png
+  Saved: pipeline_v2_single_gpu/gradcam/gradcam_Monkeypox_correct.png
+  Saved: pipeline_v2_single_gpu/gradcam/gradcam_Monkeypox_wrong.png
+  Summary grid saved.
+Section 12 complete.
+======================================================================
+PAPER-READY FILE INDEX (all paths relative to OUT_DIR = 'pipeline_v2_single_gpu')
+======================================================================
+  [OK     ] Table 1 (main CV, per-fold)                -> table1_main_cv_per_fold.csv
+  [OK     ] Table 1 (main CV, aggregate)               -> cv_summary.json (key: cv_aggregate)
+  [OK     ] Table 2 (baseline comparison)              -> table2_baseline_comparison.csv
+  [OK     ] Table 3 (architecture ablation)            -> table3_architecture_ablation.csv
+  [OK     ] Table 4 (training-strategy ablation)       -> table4_training_ablation.csv
+  [OK     ] Table 5 (per-class CV metrics)             -> table5_per_class_cv.csv
+  [OK     ] Table 6 (external validation)              -> table6_external_validation.csv
+  [OK     ] Table 7 (calibration ECE)                  -> table7_calibration.csv
+  [OK     ] Table 8 (FedPer vs FedProx)                -> table8_fedper_comparison.csv
+  [OK     ] Table 9 (DP-SGD tradeoff)                  -> table9_dp_tradeoff.csv
+  [OK     ] Table (poisoning robustness)               -> table_poisoning_robustness_agg.csv
+  [OK     ] Fig. main CV summary                       -> fig_main_cv_summary.png
+  [OK     ] Fig. architecture ablation                 -> fig_architecture_ablation.png
+  [OK     ] Fig. poisoning robustness                  -> fig_poisoning_robustness.png
+  [OK     ] Fig. DP-SGD privacy-utility tradeoff       -> fig_dp_tradeoff.png
+  [OK     ] Fig. reliability diagram (calib.)          -> fig_reliability_diagram.png
+  [OK     ] Fig. GradCAM++ summary grid                -> gradcam/gradcam_summary_grid.png
+  [OK     ] Fig. external validation CM                -> external_validation/cm_external_prior_corrected.png
+  [OK     ] Fig. external validation ROC               -> external_validation/roc_external_prior_corrected.png
+  [OK     ] Winning architecture record                -> winning_architecture.json
+
+All sections complete. Everything needed to rewrite Methodology and
+write Results & Discussion is now in: /home/sr5/imam.bokhary/project/LTA/Prepare_Data/envs/mpo/pipeline_v2_single_gpu
