@@ -1,4 +1,3 @@
-% ============================================================
 \section{Results and Discussion}
 \label{sec:results}
 % ============================================================
@@ -405,7 +404,12 @@ $0.918$ and $0.926$, respectively.
 \label{subsec:results_train_ablation}
 
 Table~\ref{tab:train_ablation} compares the focal-loss weighting schemes
-and SWA.
+and SWA. The \texttt{focal\_uniform} configuration had the lowest F1
+($0.916\pm0.016$), compared with $0.923\pm0.011$ for the primary
+configuration. The primary focal-loss weights place greater emphasis on
+minority classes, following the role of class weighting in focal loss
+\cite{ref66}. The \texttt{focal\_train\_dist} result indicates that the
+specific weight derivation has minimal impact ($0.924$ vs.\ $0.923$).
 
 \begin{table}[htbp]
     \centering
@@ -439,13 +443,6 @@ and SWA.
         \bottomrule
     \end{tabular}
 \end{table}
-
-The \texttt{focal\_uniform} configuration had the lowest F1
-($0.916\pm0.016$), compared with $0.923\pm0.011$ for the primary
-configuration. The primary focal-loss weights place greater emphasis on
-minority classes, following the role of class weighting in focal loss
-\cite{ref66}. The \texttt{focal\_train\_dist} result indicates that the
-specific weight derivation has minimal impact ($0.924$ vs.\ $0.923$).
 
 Removing SWA produced a slightly higher mean F1
 ($0.926\pm0.019$). SWA \cite{ref60} therefore did not increase mean
@@ -530,7 +527,7 @@ Figure~\ref{fig:gradcam_summary} shows Grad-CAM++ visualizations
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\linewidth]
-    {pipeline_v2_single_gpu/gradcam/gradcam_summary_grid.png}
+    {figs/gradcam_summary_grid.png}
     \caption{Grad-CAM++ summary grid for the best-performing fold
     (Fold~1, Run~1). Each row corresponds to a class; left columns show
     original images and right columns show Grad-CAM++ overlays.
@@ -606,12 +603,10 @@ FedAvg, FedProx, and coordinate-wise trimmed mean follow
 % Image right: pipeline_v2_single_gpu/poisoning_robustness/Fold_3/FedProx/cm_poison_Fold_3_FedProx_sev60.png
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.48\linewidth]{figs/cm_poison_Fold_3_FedProx_clean.png}
+    \includegraphics[width=0.48\linewidth]{figs/cm_fedprox_sev0.png}
     \hfill
-    \includegraphics[width=0.48\linewidth]{figs/cm_poison_Fold_3_FedProx_sev60.png}
-    \caption{Confusion matrices for FedProx on Fold~3. Left: clean
-    ($f=0$). Right: severity $f=0.6$. The overall pattern is largely
-    preserved, with minor degradation in Chickenpox recall.}
+    \includegraphics[width=0.48\linewidth]{figs/cm_fedprox_trimmed_sev60.png}
+    \caption{Confusion matrices for Fold~3 of the poisoning experiment. Left: FedProx clean ($f = 0$). Right: FedProx + Trimmed at maximum severity ($f = 0.6$).}
     \label{fig:poisoning_cm}
 \end{figure}
 
@@ -673,7 +668,7 @@ Table~\ref{tab:fedper} compares FedPer \cite{ref69} with FedProx
     \centering
     \includegraphics[width=0.48\linewidth]{figs/cm_Fold_1_FL_Run2_Heterogeneous_fl.png}
     \hfill
-    \includegraphics[width=0.48\linewidth]{figs/cm_Fold_1_FedPer.png}
+    \includegraphics[width=0.48\linewidth]{figs/cm_fedper_Fold_1_FL_Run2_Heterogeneous.png}
     \caption{Confusion matrices for Fold~1 under the Non-IID setting.
     Left: FedProx. Right: FedPer. The error patterns are similar, with
     FedPer showing slightly more Chickenpox--Monkeypox confusion.}
@@ -776,9 +771,9 @@ the DP-SGD experiments \cite{ref68}, implemented with Opacus
 % Image right: pipeline_v2_single_gpu/dp_sgd/Fold_1/eps12/roc_dp_Fold_1_eps12.png
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.48\linewidth]{figs/roc_dp_Fold_1_noDP.png}
+    \includegraphics[width=0.48\linewidth]{figs/roc_dp_no_dp_fold1.png}
     \hfill
-    \includegraphics[width=0.48\linewidth]{figs/roc_dp_Fold_1_eps12.png}
+    \includegraphics[width=0.48\linewidth]{figs/roc_dp_eps12_fold1.png}
     \caption{Per-class ROC curves for Fold~1 of the DP-SGD experiment.
     Left: no DP. Right: $\varepsilon=12$. AUROC decreases from $0.991$
     to $0.936$, indicating reduced but non-trivial ranking ability.}

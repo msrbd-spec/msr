@@ -672,4 +672,3 @@ Future work should therefore examine larger and more balanced datasets,
 multiple random seeds, broader external validation, client-specific
 personalization, additional DP experiments, and more varied poisoning
 scenarios.
-\begin{thebibliography}{80}
